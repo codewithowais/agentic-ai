@@ -1,0 +1,1239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="A 16-week, hands-on Agentic AI course syllabus — weekly labs, assessments, capstone, and policies.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤖</text></svg>">
+<style>:root{color-scheme:light dark}html{-webkit-text-size-adjust:100%}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>Agentic AI Syllabus</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap">
+
+<style>
+  :root {
+    --bg: #f4f5f3;
+    --surface: #ffffff;
+    --surface-2: #ecefeb;
+    --ink: #191c1a;
+    --muted: #5b625d;
+    --faint: #8a918b;
+    --border: #dde1db;
+    --border-strong: #cbd0c8;
+    --accent: #0f766e;
+    --accent-ink: #0b5a54;
+    --accent-soft: #d3e9e6;
+    --accent-line: #9fd0ca;
+    --amber: #a2560a;
+    --amber-soft: #f4e3cb;
+    --amber-line: #e2b785;
+    --shadow: 0 1px 2px rgba(20,30,25,.04), 0 8px 24px -12px rgba(20,30,25,.14);
+    --shadow-sm: 0 1px 2px rgba(20,30,25,.05);
+    --radius: 14px;
+    --radius-sm: 9px;
+    --maxread: 74ch;
+    --font-display: "Bricolage Grotesque", "Georgia", serif;
+    --font-body: "IBM Plex Sans", system-ui, -apple-system, sans-serif;
+    --font-mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  }
+  :root:not([data-theme="light"]) {
+    @media (prefers-color-scheme: dark) {
+      --bg: #131614;
+      --surface: #1b1f1c;
+      --surface-2: #232823;
+      --ink: #e9ede9;
+      --muted: #9aa39c;
+      --faint: #6f7871;
+      --border: #2c322d;
+      --border-strong: #3a413b;
+      --accent: #33d3c2;
+      --accent-ink: #6fe4d7;
+      --accent-soft: #10312e;
+      --accent-line: #1f5049;
+      --amber: #e7a24d;
+      --amber-soft: #3a2a13;
+      --amber-line: #6b4d22;
+      --shadow: 0 1px 2px rgba(0,0,0,.3), 0 12px 30px -14px rgba(0,0,0,.6);
+      --shadow-sm: 0 1px 2px rgba(0,0,0,.35);
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #131614;
+    --surface: #1b1f1c;
+    --surface-2: #232823;
+    --ink: #e9ede9;
+    --muted: #9aa39c;
+    --faint: #6f7871;
+    --border: #2c322d;
+    --border-strong: #3a413b;
+    --accent: #33d3c2;
+    --accent-ink: #6fe4d7;
+    --accent-soft: #10312e;
+    --accent-line: #1f5049;
+    --amber: #e7a24d;
+    --amber-soft: #3a2a13;
+    --amber-line: #6b4d22;
+    --shadow: 0 1px 2px rgba(0,0,0,.3), 0 12px 30px -14px rgba(0,0,0,.6);
+    --shadow-sm: 0 1px 2px rgba(0,0,0,.35);
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; scroll-padding-top: 84px; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* progress + topbar */
+  #progress {
+    position: fixed; top: 0; left: 0; height: 3px; width: 0%;
+    background: linear-gradient(90deg, var(--accent), var(--amber));
+    z-index: 60; transition: width .12s linear;
+  }
+  .topbar {
+    position: sticky; top: 0; z-index: 50;
+    display: flex; align-items: center; gap: 14px;
+    padding: 10px clamp(14px, 3vw, 28px);
+    background: color-mix(in srgb, var(--bg) 86%, transparent);
+    backdrop-filter: saturate(1.4) blur(10px);
+    border-bottom: 1px solid var(--border);
+  }
+  .topbar .brand {
+    font-family: var(--font-mono); font-size: 12.5px; letter-spacing: .06em;
+    text-transform: uppercase; color: var(--muted); white-space: nowrap;
+  }
+  .topbar .brand b { color: var(--ink); font-weight: 600; }
+  .topbar .spacer { flex: 1; }
+  .icon-btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: 7px;
+    height: 36px; padding: 0 12px; border-radius: 9px;
+    border: 1px solid var(--border-strong); background: var(--surface);
+    color: var(--ink); font-family: var(--font-mono); font-size: 12px;
+    cursor: pointer; transition: border-color .15s, background .15s, transform .05s;
+  }
+  .icon-btn:hover { border-color: var(--accent); }
+  .icon-btn:active { transform: translateY(1px); }
+  .icon-btn svg { width: 15px; height: 15px; }
+  .icon-btn.solid { background: var(--accent-soft); border-color: var(--accent-line); color: var(--accent-ink); text-decoration: none; }
+  #navToggle { display: none; }
+
+  /* layout */
+  .layout {
+    display: grid;
+    grid-template-columns: 288px minmax(0, 1fr);
+    gap: clamp(20px, 4vw, 56px);
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 0 clamp(14px, 3vw, 28px) 100px;
+    align-items: start;
+  }
+
+  /* sidebar */
+  .sidebar {
+    position: sticky; top: 64px;
+    max-height: calc(100vh - 78px);
+    overflow-y: auto;
+    padding: 22px 6px 40px 0;
+    font-size: 13.5px;
+    scrollbar-width: thin;
+  }
+  .sidebar::-webkit-scrollbar { width: 8px; }
+  .sidebar::-webkit-scrollbar-thumb { background: var(--border-strong); border-radius: 8px; }
+  .toc-group { margin-bottom: 20px; }
+  .toc-group > .toc-h {
+    font-family: var(--font-mono); font-size: 10.5px; letter-spacing: .13em;
+    text-transform: uppercase; color: var(--faint);
+    padding: 0 12px 8px; display: block;
+  }
+  .toc-link {
+    display: flex; align-items: baseline; gap: 9px;
+    padding: 6px 12px; border-radius: 8px;
+    color: var(--muted); text-decoration: none; line-height: 1.35;
+    border-left: 2px solid transparent; margin-left: -2px;
+    transition: color .13s, background .13s, border-color .13s;
+  }
+  .toc-link .wk { font-family: var(--font-mono); font-size: 11px; color: var(--faint); min-width: 22px; }
+  .toc-link:hover { color: var(--ink); background: var(--surface-2); }
+  .toc-link.active { color: var(--accent-ink); background: var(--accent-soft); border-left-color: var(--accent); font-weight: 600; }
+  .toc-link.active .wk { color: var(--accent-ink); }
+
+  /* main */
+  main { min-width: 0; padding-top: 8px; }
+  section { scroll-margin-top: 84px; }
+
+  /* hero */
+  .hero { padding: 40px 0 30px; border-bottom: 1px solid var(--border); margin-bottom: 8px; }
+  .eyebrow {
+    font-family: var(--font-mono); font-size: 12px; letter-spacing: .14em;
+    text-transform: uppercase; color: var(--accent-ink);
+    display: inline-flex; align-items: center; gap: 8px; margin-bottom: 18px;
+  }
+  .eyebrow::before { content: ""; width: 26px; height: 1.5px; background: var(--accent); display: inline-block; }
+  h1.title {
+    font-family: var(--font-display); font-weight: 700;
+    font-size: clamp(2rem, 5.2vw, 3.4rem); line-height: 1.02;
+    letter-spacing: -.02em; text-wrap: balance; margin: 0 0 6px;
+  }
+  .subtitle { font-size: clamp(1.05rem, 2vw, 1.3rem); color: var(--muted); max-width: 60ch; margin: 0 0 26px; }
+  .facts { display: flex; flex-wrap: wrap; gap: 10px; }
+  .fact {
+    display: flex; flex-direction: column; gap: 2px;
+    padding: 11px 15px; border: 1px solid var(--border); border-radius: var(--radius-sm);
+    background: var(--surface); box-shadow: var(--shadow-sm); min-width: 96px;
+  }
+  .fact .k { font-family: var(--font-mono); font-size: 10.5px; letter-spacing: .08em; text-transform: uppercase; color: var(--faint); }
+  .fact .v { font-family: var(--font-display); font-weight: 600; font-size: 1.15rem; }
+
+  /* section scaffolding */
+  .sec { padding: 46px 0 8px; }
+  .sec + .sec { border-top: 1px solid var(--border); }
+  .kicker {
+    font-family: var(--font-mono); font-size: 11px; letter-spacing: .12em;
+    text-transform: uppercase; color: var(--faint); margin-bottom: 8px;
+  }
+  h2 {
+    font-family: var(--font-display); font-weight: 700;
+    font-size: clamp(1.5rem, 3.2vw, 2.1rem); line-height: 1.08;
+    letter-spacing: -.015em; text-wrap: balance; margin: 0 0 14px;
+  }
+  h3 { font-family: var(--font-display); font-weight: 600; font-size: 1.2rem; letter-spacing: -.01em; margin: 26px 0 10px; }
+  p { max-width: var(--maxread); margin: 0 0 15px; }
+  a { color: var(--accent-ink); text-underline-offset: 2px; text-decoration-thickness: 1px; }
+  .lead { font-size: 1.08rem; color: var(--ink); }
+  strong { font-weight: 600; }
+
+  ul.clean { list-style: none; padding: 0; margin: 0 0 15px; max-width: var(--maxread); }
+  ul.clean li { position: relative; padding-left: 22px; margin-bottom: 9px; }
+  ul.clean li::before {
+    content: ""; position: absolute; left: 4px; top: 10px;
+    width: 6px; height: 6px; border-radius: 2px; background: var(--accent);
+  }
+  ol.steps { padding-left: 0; margin: 0 0 15px; max-width: var(--maxread); list-style: none; counter-reset: s; }
+  ol.steps li { position: relative; padding-left: 40px; margin-bottom: 12px; counter-increment: s; }
+  ol.steps li::before {
+    content: counter(s); position: absolute; left: 0; top: -1px;
+    width: 26px; height: 26px; border-radius: 7px;
+    background: var(--surface-2); border: 1px solid var(--border);
+    font-family: var(--font-mono); font-size: 12px; font-weight: 600;
+    display: flex; align-items: center; justify-content: center; color: var(--accent-ink);
+  }
+
+  /* callout */
+  .callout {
+    border: 1px solid var(--accent-line); border-left: 3px solid var(--accent);
+    background: var(--accent-soft); border-radius: var(--radius-sm);
+    padding: 14px 18px; margin: 18px 0; max-width: var(--maxread);
+    font-size: .96rem;
+  }
+  .callout.warm { border-color: var(--amber-line); border-left-color: var(--amber); background: var(--amber-soft); }
+  .callout p { margin: 0; max-width: none; }
+
+  /* tables */
+  .twrap { overflow-x: auto; margin: 8px 0 20px; border: 1px solid var(--border); border-radius: var(--radius-sm); box-shadow: var(--shadow-sm); }
+  table { border-collapse: collapse; width: 100%; font-size: .93rem; min-width: 460px; background: var(--surface); }
+  th, td { text-align: left; padding: 11px 15px; border-bottom: 1px solid var(--border); vertical-align: top; }
+  thead th {
+    font-family: var(--font-mono); font-size: 10.5px; letter-spacing: .07em;
+    text-transform: uppercase; color: var(--muted); background: var(--surface-2);
+    position: sticky; top: 0;
+  }
+  tbody tr:last-child td { border-bottom: none; }
+  tbody tr:hover td { background: color-mix(in srgb, var(--accent-soft) 40%, transparent); }
+  td.num, th.num { font-family: var(--font-mono); font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .wt { font-family: var(--font-mono); font-weight: 600; color: var(--accent-ink); }
+
+  /* month divider */
+  .month {
+    display: flex; align-items: baseline; gap: 16px; flex-wrap: wrap;
+    margin: 50px 0 6px; padding-bottom: 14px; border-bottom: 2px solid var(--ink);
+    scroll-margin-top: 84px;
+  }
+  .month .mnum { font-family: var(--font-mono); font-size: 13px; color: var(--amber); font-weight: 600; letter-spacing: .05em; }
+  .month h2 { margin: 0; }
+  .month .mmeta { font-size: .9rem; color: var(--muted); margin-left: auto; }
+
+  /* week cards */
+  .week {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: var(--radius); box-shadow: var(--shadow);
+    padding: clamp(18px, 2.4vw, 28px); margin: 18px 0;
+    scroll-margin-top: 84px;
+  }
+  .week.buffer { border-color: var(--amber-line); }
+  .week-head { display: flex; align-items: flex-start; gap: 16px; flex-wrap: wrap; margin-bottom: 6px; }
+  .week-num {
+    font-family: var(--font-mono); font-weight: 600; font-size: 13px;
+    color: var(--surface); background: var(--accent);
+    padding: 5px 10px; border-radius: 8px; white-space: nowrap; letter-spacing: .03em;
+  }
+  .week.buffer .week-num { background: var(--amber); }
+  .week-head h3 { margin: 0; font-size: 1.32rem; flex: 1; min-width: 200px; }
+  .tags { display: flex; gap: 6px; flex-wrap: wrap; }
+  .tag {
+    font-family: var(--font-mono); font-size: 10.5px; letter-spacing: .04em;
+    padding: 4px 9px; border-radius: 999px; border: 1px solid var(--border-strong);
+    color: var(--muted); white-space: nowrap; text-transform: uppercase;
+  }
+  .tag.lvl { color: var(--accent-ink); border-color: var(--accent-line); background: var(--accent-soft); }
+  .tag.buf { color: var(--amber); border-color: var(--amber-line); background: var(--amber-soft); }
+
+  .block { margin-top: 16px; }
+  .block > .lab {
+    font-family: var(--font-mono); font-size: 10.5px; letter-spacing: .1em;
+    text-transform: uppercase; color: var(--faint);
+    display: flex; align-items: center; gap: 8px; margin-bottom: 7px;
+  }
+  .block > .lab::before { content: ""; width: 13px; height: 13px; border-radius: 4px; background: var(--accent-soft); border: 1px solid var(--accent-line); }
+  .block.homework > .lab::before { background: var(--amber-soft); border-color: var(--amber-line); }
+  .block.bufnote > .lab::before { background: var(--amber); border-color: var(--amber); }
+  .block p, .block ul.clean { margin-bottom: 0; }
+  .block p { max-width: none; }
+  .block ul.clean { max-width: none; }
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+  @media (max-width: 620px) { .grid2 { grid-template-columns: 1fr; gap: 16px; } }
+
+  .deliverable {
+    border: 1px dashed var(--amber-line); border-radius: var(--radius-sm);
+    background: var(--amber-soft); padding: 12px 16px; margin-top: 16px;
+    font-size: .95rem;
+  }
+  .deliverable .lab { color: var(--amber); }
+
+  /* topic chips → link into the topic guide */
+  .lab .hint { color: var(--faint); text-transform: none; letter-spacing: 0; font-weight: 400; }
+  .chips { display: flex; flex-wrap: wrap; gap: 7px; }
+  a.topic-chip {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-size: .86rem; line-height: 1.2; text-decoration: none;
+    padding: 6px 11px; border-radius: 999px;
+    background: var(--surface-2); border: 1px solid var(--border);
+    color: var(--ink); transition: border-color .13s, background .13s, color .13s, transform .05s;
+  }
+  a.topic-chip::before { content: ""; width: 5px; height: 5px; border-radius: 50%; background: var(--accent); flex: none; }
+  a.topic-chip:hover { border-color: var(--accent); background: var(--accent-soft); color: var(--accent-ink); }
+  a.topic-chip:active { transform: translateY(1px); }
+
+  footer { max-width: var(--maxread); margin: 40px 0 0; color: var(--muted); font-size: .9rem; }
+  footer p { max-width: none; }
+  .backtop { display: inline-flex; align-items: center; gap: 6px; font-family: var(--font-mono); font-size: 12px; margin-top: 10px; }
+
+  /* responsive */
+  @media (max-width: 900px) {
+    .layout { grid-template-columns: 1fr; }
+    #navToggle { display: inline-flex; }
+    .sidebar {
+      position: fixed; top: 0; left: 0; bottom: 0; width: min(320px, 84vw);
+      max-height: none; background: var(--surface); z-index: 55;
+      border-right: 1px solid var(--border); box-shadow: var(--shadow);
+      padding: 74px 14px 40px; transform: translateX(-102%);
+      transition: transform .22s ease;
+    }
+    .sidebar.open { transform: translateX(0); }
+    .scrim { position: fixed; inset: 0; background: rgba(10,14,12,.42); z-index: 54; opacity: 0; pointer-events: none; transition: opacity .2s; }
+    .scrim.show { opacity: 1; pointer-events: auto; }
+  }
+  @media (prefers-reduced-motion: reduce) { .sidebar { transition: none; } }
+  :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 4px; }
+</style>
+</head>
+<body>
+
+<div id="progress"></div>
+
+<div class="topbar">
+  <button class="icon-btn" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+  </button>
+  <span class="brand"><b>Agentic AI</b> &nbsp;/&nbsp; Syllabus</span>
+  <span class="spacer"></span>
+  <a class="icon-btn solid" href="topics.html">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+    Topic guide
+  </a>
+  <button class="icon-btn" id="themeToggle" aria-label="Toggle color theme">
+    <svg id="themeIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+    <span id="themeLabel">Theme</span>
+  </button>
+</div>
+
+<div class="scrim" id="scrim"></div>
+
+<div class="layout">
+  <!-- SIDEBAR -->
+  <nav class="sidebar" id="sidebar" aria-label="Table of contents">
+    <div class="toc-group">
+      <span class="toc-h">The course</span>
+      <a class="toc-link" href="#overview"><span>Overview &amp; rationale</span></a>
+      <a class="toc-link" href="#prereqs"><span>Prerequisites</span></a>
+      <a class="toc-link" href="#outcomes"><span>Learning outcomes</span></a>
+      <a class="toc-link" href="#stack"><span>Tools &amp; tech stack</span></a>
+      <a class="toc-link" href="#session"><span>3-hour session structure</span></a>
+      <a class="toc-link" href="#assessment"><span>Assessment</span></a>
+      <a class="toc-link" href="#capstone"><span>Capstone project</span></a>
+      <a class="toc-link" href="#policies"><span>Grading &amp; policies</span></a>
+      <a class="toc-link" href="#resources"><span>Resources</span></a>
+    </div>
+    <div class="toc-group">
+      <span class="toc-h">Month 1 · Foundations</span>
+      <a class="toc-link" href="#w1"><span class="wk">01</span><span>What makes an agent</span></a>
+      <a class="toc-link" href="#w2"><span class="wk">02</span><span>Tool / function calling</span></a>
+      <a class="toc-link" href="#w3"><span class="wk">03</span><span>ReAct, built by hand</span></a>
+      <a class="toc-link" href="#w4"><span class="wk">04</span><span>Reasoning + mini-project</span></a>
+    </div>
+    <div class="toc-group">
+      <span class="toc-h">Month 2 · Capable agents</span>
+      <a class="toc-link" href="#w5"><span class="wk">05</span><span>Designing agent tools</span></a>
+      <a class="toc-link" href="#w6"><span class="wk">06</span><span>Memory &amp; retrieval</span></a>
+      <a class="toc-link" href="#w7"><span class="wk">07</span><span>Frameworks hands-on</span></a>
+      <a class="toc-link" href="#w8"><span class="wk">08</span><span>Planning + proposal</span></a>
+    </div>
+    <div class="toc-group">
+      <span class="toc-h">Month 3 · Architectures</span>
+      <a class="toc-link" href="#w9"><span class="wk">09</span><span>Multi-agent systems</span></a>
+      <a class="toc-link" href="#w10"><span class="wk">10</span><span>Orchestration &amp; HITL</span></a>
+      <a class="toc-link" href="#w11"><span class="wk">11</span><span>Context engineering &amp; MCP</span></a>
+      <a class="toc-link" href="#w12"><span class="wk">12</span><span>Eval, tracing + review</span></a>
+    </div>
+    <div class="toc-group">
+      <span class="toc-h">Month 4 · Production</span>
+      <a class="toc-link" href="#w13"><span class="wk">13</span><span>Reliability &amp; cost</span></a>
+      <a class="toc-link" href="#w14"><span class="wk">14</span><span>Safety &amp; security</span></a>
+      <a class="toc-link" href="#w15"><span class="wk">15</span><span>Deploy &amp; operate</span></a>
+      <a class="toc-link" href="#w16"><span class="wk">16</span><span>Capstone demos</span></a>
+    </div>
+    <div class="toc-group">
+      <span class="toc-h">Reference</span>
+      <a class="toc-link" href="#map"><span>Outcome → assessment map</span></a>
+    </div>
+  </nav>
+
+  <!-- MAIN -->
+  <main>
+    <header class="hero" id="top">
+      <span class="eyebrow">16-week hands-on course</span>
+      <h1 class="title">Agentic AI — From Foundations to Advanced Systems</h1>
+      <p class="subtitle">Designing, building, evaluating, and shipping AI agents. For people who already know ML and LLMs — and want to make agents that actually work.</p>
+      <div class="facts">
+        <div class="fact"><span class="k">Duration</span><span class="v">16 weeks</span></div>
+        <div class="fact"><span class="k">Format</span><span class="v">3 hrs / week</span></div>
+        <div class="fact"><span class="k">Style</span><span class="v">Code-first</span></div>
+        <div class="fact"><span class="k">Level</span><span class="v">Int → Adv</span></div>
+        <div class="fact"><span class="k">Stack</span><span class="v">Python · LangGraph</span></div>
+        <div class="fact"><span class="k">Capstone</span><span class="v">Deployed agent</span></div>
+      </div>
+    </header>
+
+    <!-- ASSUMPTIONS -->
+    <section class="sec" id="overview">
+      <div class="kicker">01 — Orientation</div>
+      <h2>Course description &amp; rationale</h2>
+      <p class="lead">Agents are what you get when you stop treating a language model as a text box and start treating it as the reasoning core of a system that can decide, act, observe, and try again. This course is about building those systems well.</p>
+      <p>We assume you already understand machine-learning basics, how large language models work, prompting, and embeddings — so we spend <strong>zero</strong> time re-explaining them. Instead, from day one we focus on what is genuinely new and genuinely hard: giving a model a loop, tools, memory, and autonomy, and keeping the result reliable, safe, and affordable.</p>
+      <p>Over 16 weeks you move from building a single tool-using agent by hand, to multi-agent systems with supervisors and human-in-the-loop checkpoints, to production concerns — evaluation, tracing, reliability, security, and deployment. You will write a lot of Python. By the end you will have a portfolio of labs and a deployed capstone agent that a stranger could actually use.</p>
+
+      <h3>Why this course, why now</h3>
+      <p>Most "AI agent" material is either a marketing demo (works once, on stage) or a framework tutorial (teaches the API, not the ideas). Both age badly, because the tools change every few months. This course is built on the opposite bet: <strong>the durable skill is understanding agent patterns</strong> — the loop, tool design, memory, orchestration, evaluation, guardrails — well enough that you can pick up whatever framework is current next year in an afternoon.</p>
+      <p>So we build things by hand before reaching for a framework (you implement a ReAct loop from scratch in <a href="#w3">Week&nbsp;3</a> before touching LangGraph in <a href="#w7">Week&nbsp;7</a>), and we treat evaluation, reliability, and security as first-class engineering — the parts that separate a demo from a product.</p>
+
+      <div class="callout">
+        <p><strong>Assumptions I made (adjust freely):</strong> cohort-based, synchronous delivery (in-person or live online), sessions recorded &nbsp;·&nbsp; provider-agnostic examples (Claude by default; any API works) &nbsp;·&nbsp; LangGraph as the framework spine, with CrewAI &amp; AutoGen for comparison &nbsp;·&nbsp; class of 12–30, solo labs and team capstones &nbsp;·&nbsp; roughly $20–40 of API credit per learner across the term.</p>
+      </div>
+    </section>
+
+    <!-- PREREQS -->
+    <section class="sec" id="prereqs">
+      <div class="kicker">02 — Getting in</div>
+      <h2>Prerequisites</h2>
+      <div class="grid2">
+        <div>
+          <h3>Required</h3>
+          <ul class="clean">
+            <li>Comfortable writing Python: functions, classes, type hints, virtual environments, reading a traceback, basic <code>async</code>/<code>await</code>.</li>
+            <li>Working knowledge of AI/ML and LLM fundamentals — tokens, embeddings, context windows, prompting, and conceptually how RAG works.</li>
+            <li>Basic command line and Git (clone, branch, commit, push).</li>
+            <li>Able to read JSON and reason about API request/response shapes.</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Helpful, not required</h3>
+          <ul class="clean">
+            <li>Prior REST API experience.</li>
+            <li>Basic Docker familiarity.</li>
+            <li>Exposure to a web framework (FastAPI / Flask).</li>
+          </ul>
+          <h3>We do <em>not</em> re-teach</h3>
+          <ul class="clean">
+            <li>Neural-network internals or transformer math.</li>
+            <li>Prompt-engineering basics or "what is an LLM."</li>
+          </ul>
+        </div>
+      </div>
+      <div class="callout"><p><strong>Quick self-check:</strong> if you can write a Python function that calls an LLM API, parses the JSON response, and handles an error — you are ready.</p></div>
+    </section>
+
+    <!-- OUTCOMES -->
+    <section class="sec" id="outcomes">
+      <div class="kicker">03 — The destination</div>
+      <h2>Course-level learning outcomes</h2>
+      <p>By the end of the course you will be able to:</p>
+      <div class="twrap">
+        <table>
+          <thead><tr><th class="num">#</th><th>You will be able to…</th><th>Assessed in</th></tr></thead>
+          <tbody>
+            <tr><td class="num">1</td><td><strong>Explain &amp; diagram</strong> the anatomy of an agent and justify when an agentic approach is (and isn't) the right choice.</td><td class="num"><a href="#w1">W1</a></td></tr>
+            <tr><td class="num">2</td><td><strong>Implement</strong> a tool-using reasoning loop (ReAct, reflection) from scratch, without a framework.</td><td class="num"><a href="#w3">W3–4</a></td></tr>
+            <tr><td class="num">3</td><td><strong>Design</strong> robust agent tools with typed schemas, validation, and error handling against real APIs.</td><td class="num"><a href="#w5">W5</a></td></tr>
+            <tr><td class="num">4</td><td><strong>Build</strong> grounded agents combining working memory, long-term memory, and retrieval.</td><td class="num"><a href="#w6">W6</a></td></tr>
+            <tr><td class="num">5</td><td><strong>Construct</strong> multi-agent systems with explicit orchestration and human-in-the-loop checkpoints.</td><td class="num"><a href="#w9">W9–10</a></td></tr>
+            <tr><td class="num">6</td><td><strong>Integrate</strong> agents with the world via context engineering and the Model Context Protocol.</td><td class="num"><a href="#w11">W11</a></td></tr>
+            <tr><td class="num">7</td><td><strong>Evaluate, trace &amp; debug</strong> agent behavior with systematic methods, not vibes.</td><td class="num"><a href="#w12">W12</a></td></tr>
+            <tr><td class="num">8</td><td><strong>Engineer</strong> agents for reliability and cost: retries, caching, fallbacks, latency budgets.</td><td class="num"><a href="#w13">W13</a></td></tr>
+            <tr><td class="num">9</td><td><strong>Assess &amp; mitigate</strong> safety and security risks, including prompt injection, with guardrails and least privilege.</td><td class="num"><a href="#w14">W14</a></td></tr>
+            <tr><td class="num">10</td><td><strong>Deploy &amp; operate</strong> an agent as a monitored service, and articulate LLMOps basics.</td><td class="num"><a href="#w15">W15</a></td></tr>
+            <tr><td class="num">11</td><td><strong>Deliver</strong> an end-to-end capstone agent and defend your design decisions.</td><td class="num"><a href="#w16">W16</a></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Every outcome maps to graded work — the full mapping is in the <a href="#map">outcome → assessment map</a>.</p>
+    </section>
+
+    <!-- STACK -->
+    <section class="sec" id="stack">
+      <div class="kicker">04 — Kit</div>
+      <h2>Required tools &amp; tech stack</h2>
+      <div class="twrap">
+        <table>
+          <thead><tr><th>Category</th><th>What we use</th><th>Notes</th></tr></thead>
+          <tbody>
+            <tr><td>Language</td><td><strong>Python 3.11+</strong></td><td><code>uv</code> for env/deps (or <code>venv</code> + <code>pip</code>)</td></tr>
+            <tr><td>LLM access</td><td>A frontier model API</td><td>Claude by default; any provider works. Everyone needs a key + credit.</td></tr>
+            <tr><td>Frameworks</td><td><strong>LangGraph + LangChain</strong> (primary); CrewAI, AutoGen (comparison)</td><td>Introduced Week 7; hand-rolled before that.</td></tr>
+            <tr><td>Retrieval</td><td>Embedding model + vector store (Chroma / FAISS)</td><td>Week 6.</td></tr>
+            <tr><td>Tools / integration</td><td><code>httpx</code>, <code>pydantic</code> schemas, <strong>MCP</strong> SDK</td><td>MCP in Week 11.</td></tr>
+            <tr><td>Eval &amp; tracing</td><td>LangSmith or an open alternative (Langfuse / Phoenix) + a custom harness</td><td>Week 12.</td></tr>
+            <tr><td>Serving</td><td><strong>FastAPI</strong> + Uvicorn; Docker</td><td>Week 15.</td></tr>
+            <tr><td>Version control</td><td>Git + GitHub (course org)</td><td>Labs submitted as PRs.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <h3>Setup before Week 1</h3>
+      <ol class="steps">
+        <li>Install Python 3.11+ and <code>uv</code>.</li>
+        <li>Create a provider account, generate an API key, and add ~$10 credit to start.</li>
+        <li>Clone the course repo and run the provided <code>hello_agent.py</code> smoke test.</li>
+        <li>Store keys in a <code>.env</code> file — <strong>never commit keys.</strong> A <code>.gitignore</code> and <code>.env.example</code> are provided; Week 1's lab checks this.</li>
+      </ol>
+      <div class="callout warm"><p>A one-page "Setup &amp; Troubleshooting" guide lives in the repo, and <a href="#w1">Week&nbsp;1</a>'s buffer time is reserved for fixing broken setups. No one leaves without a working environment.</p></div>
+    </section>
+
+    <!-- SESSION STRUCTURE -->
+    <section class="sec" id="session">
+      <div class="kicker">05 — The weekly rhythm</div>
+      <h2>The 3-hour session structure</h2>
+      <p>Every week follows the same rhythm, so you always know where you are. Total <strong>180 minutes</strong>, with about <strong>40 minutes of buffer</strong> (recap, break, wrap Q&amp;A) baked into each session.</p>
+      <div class="twrap">
+        <table>
+          <thead><tr><th>Segment</th><th class="num">Clock</th><th class="num">Length</th><th>Purpose</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Recap &amp; warm-up</strong> <span class="tag buf">buffer</span></td><td class="num">0:00–0:15</td><td class="num">15 min</td><td>Review last week, connect to today, homework questions.</td></tr>
+            <tr><td>Concept block I</td><td class="num">0:15–0:55</td><td class="num">40 min</td><td>New ideas with live-coded demos.</td></tr>
+            <tr><td>Guided lab · part 1</td><td class="num">0:55–1:35</td><td class="num">40 min</td><td>Hands-on, instructor circulating.</td></tr>
+            <tr><td><strong>Break</strong> <span class="tag buf">buffer</span></td><td class="num">1:35–1:50</td><td class="num">15 min</td><td>—</td></tr>
+            <tr><td>Concept block II</td><td class="num">1:50–2:20</td><td class="num">30 min</td><td>Deeper / second topic, patterns, pitfalls.</td></tr>
+            <tr><td>Guided lab · part 2 + stretch</td><td class="num">2:20–2:50</td><td class="num">40 min</td><td>Finish the lab; stretch goals for the fast movers.</td></tr>
+            <tr><td><strong>Wrap, Q&amp;A &amp; homework brief</strong> <span class="tag buf">buffer</span></td><td class="num">2:50–3:00</td><td class="num">10 min</td><td>Debrief, assign homework, open questions.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="callout warm"><p><strong>Where the buffer lives:</strong> ~40 min per session absorbs the normal friction of hands-on work. On top of that, <strong>Weeks 4, 8, and 12 are lighter checkpoint weeks</strong> with less new material — deliberate room to catch up, consolidate, and review capstone progress.</p></div>
+    </section>
+
+    <!-- ASSESSMENT -->
+    <section class="sec" id="assessment">
+      <div class="kicker">06 — How you're graded</div>
+      <h2>Assessment breakdown</h2>
+      <div class="twrap">
+        <table>
+          <thead><tr><th>Component</th><th class="num">Weight</th><th>What it covers</th></tr></thead>
+          <tbody>
+            <tr><td>Weekly labs (best 10 of 12)</td><td class="wt num">25%</td><td>Completion + correctness of finished labs, submitted as PRs.</td></tr>
+            <tr><td>Homework assignments</td><td class="wt num">15%</td><td>Extending labs; short applied problems.</td></tr>
+            <tr><td>Mini-project (<a href="#w4">Week 4</a>)</td><td class="wt num">10%</td><td>A self-contained agent combining the loop + a reasoning pattern.</td></tr>
+            <tr><td>Checkpoints (<a href="#w8">W8</a> &amp; <a href="#w12">W12</a>)</td><td class="wt num">10%</td><td>Capstone proposal and mid-capstone review.</td></tr>
+            <tr><td>Capstone (<a href="#capstone">W13–16</a>)</td><td class="wt num">30%</td><td>Design, build, evaluate, deploy, and present an end-to-end agent.</td></tr>
+            <tr><td>Participation &amp; peer engagement</td><td class="wt num">10%</td><td>Attendance, contribution, peer code review, demo-day feedback.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="callout"><p>Labs are graded lightly (done-and-works) so you can experiment without fear. The capstone is where depth is rewarded.</p></div>
+    </section>
+
+    <!-- CAPSTONE -->
+    <section class="sec" id="capstone">
+      <div class="kicker">07 — The main event</div>
+      <h2>Capstone project</h2>
+      <p class="lead">Design, build, evaluate, and deploy an agent (or small multi-agent system) that does something genuinely useful. It must use tools, some form of memory or retrieval, and demonstrate reliability and safety thinking.</p>
+      <p>"A chatbot with no tools" does not qualify. "A research assistant that searches, reads, cross-checks, and drafts a cited summary" does. Good scopes: a personal research/summarization agent with citations; a codebase Q&amp;A agent over a real repo; a support-triage agent with human handoff; a data-analysis agent that queries a database and charts results; a multi-agent content pipeline (researcher → writer → editor).</p>
+      <div class="grid2">
+        <div>
+          <h3>Requirements</h3>
+          <ul class="clean">
+            <li>At least 2 well-designed tools with schemas + error handling.</li>
+            <li>Memory and/or retrieval that meaningfully changes behavior.</li>
+            <li>An <strong>evaluation suite</strong> — a small labeled test set + metrics, not just a demo.</li>
+            <li>Reliability features (retries / fallbacks / caching) and a cost/latency note.</li>
+            <li>A safety pass: at least one guardrail and a least-privilege permission story.</li>
+            <li>Deployed and reachable (API or simple UI) with basic monitoring / tracing.</li>
+            <li>A short design doc + a 6–8 minute demo.</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Milestones tied to weeks</h3>
+          <div class="twrap">
+            <table>
+              <thead><tr><th>Milestone</th><th class="num">Due</th></tr></thead>
+              <tbody>
+                <tr><td>Proposal — problem, users, tools, success criteria</td><td class="num"><a href="#w8">W8</a></td></tr>
+                <tr><td>Architecture sketch — graph, tools, data flow, handoffs</td><td class="num"><a href="#w10">W10</a></td></tr>
+                <tr><td>Mid-capstone review — working core + first eval cases</td><td class="num"><a href="#w12">W12</a></td></tr>
+                <tr><td>Reliability + safety pass</td><td class="num"><a href="#w14">W14</a></td></tr>
+                <tr><td>Deploy + monitor</td><td class="num"><a href="#w15">W15</a></td></tr>
+                <tr><td>Final demo + design doc</td><td class="num"><a href="#w16">W16</a></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- POLICIES -->
+    <section class="sec" id="policies">
+      <div class="kicker">08 — The fine print</div>
+      <h2>Grading scale &amp; course policies</h2>
+      <div class="grid2">
+        <div>
+          <h3>Grading scale</h3>
+          <div class="twrap">
+            <table>
+              <thead><tr><th>Grade</th><th class="num">Range</th></tr></thead>
+              <tbody>
+                <tr><td>A</td><td class="num">93–100</td></tr>
+                <tr><td>A−</td><td class="num">90–92</td></tr>
+                <tr><td>B+</td><td class="num">87–89</td></tr>
+                <tr><td>B</td><td class="num">83–86</td></tr>
+                <tr><td>B−</td><td class="num">80–82</td></tr>
+                <tr><td>C+</td><td class="num">77–79</td></tr>
+                <tr><td>C</td><td class="num">70–76</td></tr>
+                <tr><td>D</td><td class="num">60–69</td></tr>
+                <tr><td>F</td><td class="num">&lt; 60</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div>
+          <h3>Policies</h3>
+          <p><strong>Attendance.</strong> Up to 2 absences without penalty; beyond that, each costs 2 points off participation unless arranged in advance. Recordings help but don't replace in-class lab help.</p>
+          <p><strong>Late work.</strong> Labs/homework: −10% per day up to 3 days, then no credit — but "best 10 of 12 labs" gives everyone slack for two bad weeks. Capstone milestone dates are firm (they gate feedback); talk to me <em>before</em> a deadline if life happens.</p>
+          <p><strong>Academic integrity.</strong> Using AI tools is encouraged — often the point. The rule: <strong>you must understand and be able to explain everything you submit.</strong> Cite substantial adapted code. Collaboration on labs is fine; copying homework or capstone work is not. Transparency is never penalized.</p>
+          <p><strong>Accessibility.</strong> Tell me early about accommodations and I'll make them. There are no dumb questions in a field this young.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- RESOURCES -->
+    <section class="sec" id="resources">
+      <div class="kicker">09 — Keep learning</div>
+      <h2>Suggested resources</h2>
+      <div class="callout warm"><p><strong>The field moves fast</strong> — treat every specific tool as temporary and every <em>pattern</em> as durable. Anything named here may be renamed or superseded; the concept underneath won't be.</p></div>
+      <div class="grid2">
+        <div>
+          <h3>Primary (always current)</h3>
+          <ul class="clean">
+            <li>Official docs for your model provider, LangChain/LangGraph, CrewAI, AutoGen, and MCP. Read the release notes — this is where the field actually lives.</li>
+            <li>Provider "building agents" guides and cookbooks.</li>
+          </ul>
+          <h3>Habits</h3>
+          <ul class="clean">
+            <li>Follow 2–3 practitioner blogs rather than trying to read everything.</li>
+            <li>Keep a personal "patterns notebook" — it outlasts any framework.</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Foundational reading (patterns over tools)</h3>
+          <ul class="clean">
+            <li>The original <strong>ReAct</strong> paper and <strong>Reflexion</strong> — the backbone of Weeks 3–4.</li>
+            <li><strong>Toolformer</strong> and function-calling write-ups for tool use.</li>
+            <li>Writing on <strong>RAG</strong> and retrieval for grounding.</li>
+            <li>The <strong>MCP</strong> specification and introductory posts.</li>
+            <li>Community write-ups on agent <strong>evaluation</strong>, <strong>tracing</strong>, and <strong>prompt injection / security</strong> (e.g. OWASP's LLM risk lists).</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ MONTH 1 ============ -->
+    <div class="month" id="month1">
+      <span class="mnum">MONTH 1</span>
+      <h2>Agent foundations</h2>
+      <span class="mmeta">Weeks 1–4 · intermediate</span>
+    </div>
+
+    <article class="week" id="w1">
+      <div class="week-head">
+        <span class="week-num">WEEK 01</span>
+        <h3>What makes something an agent? Anatomy &amp; setup</h3>
+        <div class="tags"><span class="tag lvl">Intermediate</span></div>
+      </div>
+      <div class="block"><div class="lab">Learning objectives</div>
+        <ul class="clean">
+          <li><strong>Define</strong> what distinguishes an agent from a plain LLM call, and <strong>identify</strong> the four components (model, tools, memory, loop) in an example system.</li>
+          <li><strong>Configure</strong> a working Python + API environment and <strong>run</strong> a minimal model call safely (keys in <code>.env</code>).</li>
+          <li><strong>Evaluate</strong> whether a given problem warrants an agent versus a simpler solution.</li>
+        </ul>
+      </div>
+      <div class="block"><div class="lab">Topics <span class="hint">— click to open its explainer</span></div>
+        <div class="chips">
+          <a class="topic-chip" href="topics.html#agent-vs-workflow">Agent vs. workflow vs. prompt</a>
+          <a class="topic-chip" href="topics.html#autonomy-spectrum">The autonomy spectrum</a>
+          <a class="topic-chip" href="topics.html#agent-anatomy">Agent anatomy: model · tools · memory · loop</a>
+          <a class="topic-chip" href="topics.html#when-not-agent">When not to build an agent</a>
+        </div>
+      </div>
+      <div class="block"><div class="lab">Hands-on lab</div><p>Stand up the environment; run the smoke test. Then build a "proto-agent": a script that calls the model in a manual loop — the model proposes an action in text, you (the human) execute it and paste the result back. Feel the loop before automating it.</p></div>
+      <div class="block homework"><div class="lab">Homework</div><p>Write a one-page teardown of an existing agent product: identify its model / tools / memory / loop, and argue whether an agent was the right call. Verify your secrets setup with the provided checker.</p></div>
+      <div class="block bufnote"><div class="lab">Buffer this week</div><p>Extra recap and wrap time is reserved for <strong>environment triage</strong> — the classic Week 1 tax of keys, versions, and installs.</p></div>
+    </article>
+
+    <article class="week" id="w2">
+      <div class="week-head">
+        <span class="week-num">WEEK 02</span>
+        <h3>Tool / function calling: how agents act</h3>
+        <div class="tags"><span class="tag lvl">Intermediate</span></div>
+      </div>
+      <div class="block"><div class="lab">Learning objectives</div>
+        <ul class="clean">
+          <li><strong>Implement</strong> function/tool calling: define a tool, expose it, parse the call, execute it, return the result.</li>
+          <li><strong>Explain</strong> the request/response cycle of tool use and <strong>debug</strong> a malformed tool call.</li>
+          <li><strong>Build</strong> a 2-tool agent that chooses between tools based on the request.</li>
+        </ul>
+      </div>
+      <div class="block"><div class="lab">Topics <span class="hint">— click to open its explainer</span></div>
+        <div class="chips">
+          <a class="topic-chip" href="topics.html#function-calling">Function / tool calling</a>
+          <a class="topic-chip" href="topics.html#tool-schema">Tool schemas</a>
+          <a class="topic-chip" href="topics.html#tool-selection">How the model picks a tool</a>
+          <a class="topic-chip" href="topics.html#tool-failure-modes">Tool-call failure modes</a>
+        </div>
+      </div>
+      <div class="block"><div class="lab">Hands-on lab</div><p>Build a small agent with two tools (e.g. a calculator and a time/weather stub). Wire the full loop: user → model → tool call → execution → model → answer. Add logging so every tool call is visible.</p></div>
+      <div class="block homework"><div class="lab">Homework</div><p>Add a third tool and a test showing the agent picks the right tool for three different prompts. Note one case where it picked wrong and why.</p></div>
+      <div class="block bufnote"><div class="lab">Buffer this week</div><p>Break and wrap used for a "gallery walk" of everyone's tool logs — comparing how prompts changed tool selection.</p></div>
+    </article>
+
+    <article class="week" id="w3">
+      <div class="week-head">
+        <span class="week-num">WEEK 03</span>
+        <h3>The agent loop: ReAct, built by hand</h3>
+        <div class="tags"><span class="tag lvl">Intermediate</span></div>
+      </div>
+      <div class="block"><div class="lab">Learning objectives</div>
+        <ul class="clean">
+          <li><strong>Implement</strong> a ReAct loop (reason → act → observe → repeat) from scratch, no framework.</li>
+          <li><strong>Design</strong> a stopping condition and max-iteration guard to prevent runaway loops.</li>
+          <li><strong>Trace</strong> a multi-step run and explain each reason/act/observe step.</li>
+        </ul>
+      </div>
+      <div class="block"><div class="lab">Topics <span class="hint">— click to open its explainer</span></div>
+        <div class="chips">
+          <a class="topic-chip" href="topics.html#react-pattern">ReAct (reason → act → observe)</a>
+          <a class="topic-chip" href="topics.html#scratchpad">The scratchpad / thought trace</a>
+          <a class="topic-chip" href="topics.html#termination">Termination &amp; iteration limits</a>
+          <a class="topic-chip" href="topics.html#agent-state">State across steps</a>
+        </div>
+      </div>
+      <div class="block"><div class="lab">Hands-on lab</div><p>Hand-roll a ReAct agent that answers multi-step questions using your Week 2 tools plus a search/lookup tool. It must show its reasoning trace, loop until it has an answer, and stop safely at a max step count.</p></div>
+      <div class="block homework"><div class="lab">Homework</div><p>Give your agent a task needing <strong>at least 3 tool calls</strong>. Capture the full trace and annotate where it reasoned well and where it wasted a step.</p></div>
+      <div class="block bufnote"><div class="lab">Buffer this week</div><p>Wrap Q&amp;A dedicated to debugging infinite loops and runaway costs — we set a hard iteration cap together.</p></div>
+    </article>
+
+    <article class="week buffer" id="w4">
+      <div class="week-head">
+        <span class="week-num">WEEK 04</span>
+        <h3>Reasoning patterns + mini-project</h3>
+        <div class="tags"><span class="tag lvl">Intermediate</span><span class="tag buf">Checkpoint</span></div>
+      </div>
+      <div class="block"><div class="lab">Learning objectives</div>
+        <ul class="clean">
+          <li><strong>Implement</strong> reflection (self-critique-then-revise) and <strong>self-consistency</strong> (sample-and-vote) on top of a base agent.</li>
+          <li><strong>Evaluate</strong> whether each pattern actually improves results, with before/after evidence.</li>
+          <li><strong>Deliver</strong> a self-contained mini-project agent combining the loop with a reasoning pattern.</li>
+        </ul>
+      </div>
+      <div class="block"><div class="lab">Topics <span class="hint">— click to open its explainer</span></div>
+        <div class="chips">
+          <a class="topic-chip" href="topics.html#reflection">Reflection / self-refinement</a>
+          <a class="topic-chip" href="topics.html#self-consistency">Self-consistency (sample &amp; vote)</a>
+        </div>
+        <p style="margin-top:12px;color:var(--muted);">Plus: when extra reasoning helps vs. just costs more. Lighter new content — a consolidation + build week.</p>
+      </div>
+      <div class="block"><div class="lab">Hands-on lab</div><p>Add a reflection step to your Week 3 agent; measure the difference on 3–5 test cases. Start the mini-project.</p></div>
+      <div class="deliverable"><div class="lab">Mini-project · graded 10% · due end of Week 5</div><p>Build a small agent that uses the loop <strong>plus</strong> at least one reasoning pattern to solve a task you choose (math word-problem solver, fact-checker, research helper). Include a short note on whether the reasoning pattern helped, with evidence.</p></div>
+      <div class="block bufnote"><div class="lab">Buffer this week</div><p><strong>Checkpoint week:</strong> reduced new material and protected time to catch up on Weeks 1–3 and start the mini-project with the instructor in the room.</p></div>
+    </article>
+
+    <!-- ============ MONTH 2 ============ -->
+    <div class="month" id="month2">
+      <span class="mnum">MONTH 2</span>
+      <h2>Building capable agents</h2>
+      <span class="mmeta">Weeks 5–8 · intermediate → upper-intermediate</span>
+    </div>
+
+    <article class="week" id="w5">
+      <div class="week-head">
+        <span class="week-num">WEEK 05</span>
+        <h3>Designing agent tools: schemas, error handling, real APIs</h3>
+        <div class="tags"><span class="tag lvl">Upper-int.</span></div>
+      </div>
+      <div class="block"><div class="lab">Learning objectives</div>
+        <ul class="clean">
+          <li><strong>Design</strong> production-quality tool schemas with clear descriptions, typed parameters (Pydantic), and validation.</li>
+          <li><strong>Implement</strong> error handling so a failing tool returns a useful message the agent can recover from — not a crash.</li>
+          <li><strong>Integrate</strong> a real third-party API as a tool, including auth and rate-limit handling.</li>
+        </ul>
+      </div>
+      <div class="block"><div class="lab">Topics <span class="hint">— click to open its explainer</span></div>
+        <div class="chips">
+          <a class="topic-chip" href="topics.html#tool-legibility">Tool legibility</a>
+          <a class="topic-chip" href="topics.html#input-validation">Input validation (Pydantic)</a>
+          <a class="topic-chip" href="topics.html#structured-errors">Structured, recoverable errors</a>
+          <a class="topic-chip" href="topics.html#idempotency">Idempotency &amp; side effects</a>
+          <a class="topic-chip" href="topics.html#rate-limits">Secrets &amp; rate limits</a>
+        </div>
+      </div>
+      <div class="block"><div class="lab">Hands-on lab</div><p>Replace a stub tool with a <strong>real API</strong> (weather, search, or GitHub). Add Pydantic validation and graceful error returns. Deliberately break it (bad input, network error) and make the agent recover.</p></div>
+      <div class="block homework"><div class="lab">Homework</div><p>Add a second real-API tool and write 3 tests: happy path, invalid input, and API failure. The agent must degrade gracefully in the last two.</p></div>
+      <div class="block bufnote"><div class="lab">Buffer this week</div><p>Break used for a short clinic on reading API docs and handling auth — the part that trips everyone up.</p></div>
+    </article>
+
+    <article class="week" id="w6">
+      <div class="week-head">
+        <span class="week-num">WEEK 06</span>
+        <h3>Agent memory &amp; retrieval</h3>
+        <div class="tags"><span class="tag lvl">Upper-int.</span></div>
+      </div>
+      <div class="block"><div class="lab">Learning objectives</div>
+        <ul class="clean">
+          <li><strong>Distinguish</strong> working memory (context window) from long-term memory (persisted) and <strong>implement</strong> both.</li>
+          <li><strong>Build</strong> a retrieval-augmented tool that grounds the agent in an external source.</li>
+          <li><strong>Evaluate</strong> how memory/retrieval changes behavior on repeated and knowledge-dependent tasks.</li>
+        </ul>
+      </div>
+      <div class="block"><div class="lab">Topics <span class="hint">— click to open its explainer</span></div>
+        <div class="chips">
+          <a class="topic-chip" href="topics.html#working-memory">Working memory</a>
+          <a class="topic-chip" href="topics.html#long-term-memory">Long-term memory</a>
+          <a class="topic-chip" href="topics.html#embeddings-search">Embeddings &amp; vector search</a>
+          <a class="topic-chip" href="topics.html#rag">RAG (grounding)</a>
+        </div>
+      </div>
+      <div class="block"><div class="lab">Hands-on lab</div><p>Add long-term memory (persisted across runs) and a <strong>retrieval tool</strong> over a small document set. Show it correctly answering a question that requires the retrieved docs — and admitting when the answer isn't there.</p></div>
+      <div class="block homework"><div class="lab">Homework</div><p>Point the retrieval tool at a corpus you care about. Produce 3 grounded Q&amp;A examples with citations to the source chunks.</p></div>
+      <div class="block bufnote"><div class="lab">Buffer this week</div><p>Wrap Q&amp;A on embeddings gotchas (chunking, stale indexes) and a preview of how this feeds the capstone.</p></div>
+    </article>
+
+    <article class="week" id="w7">
+      <div class="week-head">
+        <span class="week-num">WEEK 07</span>
+        <h3>Agent frameworks hands-on (LangGraph; CrewAI &amp; AutoGen)</h3>
+        <div class="tags"><span class="tag lvl">Upper-int.</span></div>
+      </div>
+      <div class="block"><div class="lab">Learning objectives</div>
+        <ul class="clean">
+          <li><strong>Rebuild</strong> a previous hand-rolled agent in <strong>LangGraph</strong>, mapping your by-hand concepts onto the framework's abstractions.</li>
+          <li><strong>Compare</strong> LangGraph, CrewAI, and AutoGen and <strong>justify</strong> which fits a given problem.</li>
+          <li><strong>Implement</strong> a simple graph with nodes, edges, and state.</li>
+        </ul>
+      </div>
+      <div class="block"><div class="lab">Topics <span class="hint">— click to open its explainer</span></div>
+        <div class="chips">
+          <a class="topic-chip" href="topics.html#why-frameworks">Why frameworks exist</a>
+          <a class="topic-chip" href="topics.html#langgraph">LangGraph (graphs &amp; state)</a>
+          <a class="topic-chip" href="topics.html#crewai">CrewAI (roles &amp; crews)</a>
+          <a class="topic-chip" href="topics.html#autogen">AutoGen (conversational)</a>
+          <a class="topic-chip" href="topics.html#framework-tradeoffs">Trade-offs &amp; lock-in</a>
+        </div>
+      </div>
+      <div class="block"><div class="lab">Hands-on lab</div><p>Port your Week 3–5 agent to LangGraph. Then re-express the <em>same</em> task minimally in CrewAI <em>or</em> AutoGen and write a short comparison: what each made easy vs. awkward.</p></div>
+      <div class="block homework"><div class="lab">Homework</div><p>Finish the port; extend the LangGraph version with one conditional edge (branching). Note two things the framework gave you for free that you'd hand-coded before.</p></div>
+      <div class="block bufnote"><div class="lab">Buffer this week</div><p>Recap slot maps "hand-rolled concept → framework term" as a class, so frameworks feel like relabeling, not new magic.</p></div>
+    </article>
+
+    <article class="week buffer" id="w8">
+      <div class="week-head">
+        <span class="week-num">WEEK 08</span>
+        <h3>Agent planning &amp; task decomposition + capstone proposal</h3>
+        <div class="tags"><span class="tag lvl">Upper-int.</span><span class="tag buf">Checkpoint</span></div>
+      </div>
+      <div class="block"><div class="lab">Learning objectives</div>
+        <ul class="clean">
+          <li><strong>Implement</strong> a planner that decomposes a complex goal into ordered subtasks the agent executes.</li>
+          <li><strong>Compare</strong> plan-then-execute vs. interleaved (ReAct-style) planning and choose appropriately.</li>
+          <li><strong>Deliver</strong> a capstone proposal with a clear problem, users, and success criteria.</li>
+        </ul>
+      </div>
+      <div class="block"><div class="lab">Topics <span class="hint">— click to open its explainer</span></div>
+        <div class="chips">
+          <a class="topic-chip" href="topics.html#task-decomposition">Task decomposition</a>
+          <a class="topic-chip" href="topics.html#plan-vs-react">Plan-and-execute vs. ReAct</a>
+          <a class="topic-chip" href="topics.html#replanning">Replanning on failure</a>
+          <a class="topic-chip" href="topics.html#subgoal-tracking">Subgoal tracking</a>
+        </div>
+        <p style="margin-top:12px;color:var(--muted);">Lighter new content — a planning + proposal week.</p>
+      </div>
+      <div class="block"><div class="lab">Hands-on lab</div><p>Add a planning step to your LangGraph agent: it drafts a plan, executes step by step, and can replan on failure. Test it on a task with 4+ subtasks.</p></div>
+      <div class="deliverable"><div class="lab">Capstone proposal · graded checkpoint · due end of Week 8</div><p>Submit a 1-page proposal: problem, target users, planned tools, memory/retrieval approach, and measurable success criteria.</p></div>
+      <div class="block bufnote"><div class="lab">Buffer this week</div><p><strong>Checkpoint week:</strong> protected time for 1:1 proposal feedback and to catch up on the framework transition.</p></div>
+    </article>
+
+    <!-- ============ MONTH 3 ============ -->
+    <div class="month" id="month3">
+      <span class="mnum">MONTH 3</span>
+      <h2>Advanced agent architectures</h2>
+      <span class="mmeta">Weeks 9–12 · advanced</span>
+    </div>
+
+    <article class="week" id="w9">
+      <div class="week-head">
+        <span class="week-num">WEEK 09</span>
+        <h3>Multi-agent systems: roles, collaboration, handoffs</h3>
+        <div class="tags"><span class="tag lvl">Advanced</span></div>
+      </div>
+      <div class="block"><div class="lab">Learning objectives</div>
+        <ul class="clean">
+          <li><strong>Build</strong> a multi-agent system where specialized agents collaborate on a task.</li>
+          <li><strong>Implement</strong> a clean handoff protocol (how one agent passes control and context to another).</li>
+          <li><strong>Evaluate</strong> when multiple agents beat a single well-designed agent — and when they just add cost and failure modes.</li>
+        </ul>
+      </div>
+      <div class="block"><div class="lab">Topics <span class="hint">— click to open its explainer</span></div>
+        <div class="chips">
+          <a class="topic-chip" href="topics.html#role-specialization">Role specialization</a>
+          <a class="topic-chip" href="topics.html#agent-communication">Communication patterns</a>
+          <a class="topic-chip" href="topics.html#shared-private-state">Shared vs. private state</a>
+          <a class="topic-chip" href="topics.html#handoffs">Handoffs</a>
+          <a class="topic-chip" href="topics.html#multi-agent-costs">Real costs of multi-agent</a>
+        </div>
+      </div>
+      <div class="block"><div class="lab">Hands-on lab</div><p>Build a 2–3 agent "content pipeline" (researcher → writer → editor) with explicit handoffs. Compare its output and cost against a single-agent baseline.</p></div>
+      <div class="block homework"><div class="lab">Homework</div><p>Add a critic agent that can send work back for revision. Show one run where the critic caught and fixed a real problem.</p></div>
+      <div class="block bufnote"><div class="lab">Buffer this week</div><p>Wrap Q&amp;A on multi-agent debugging — tracing <em>which</em> agent went wrong is a new skill; we practice reading multi-agent logs.</p></div>
+    </article>
+
+    <article class="week" id="w10">
+      <div class="week-head">
+        <span class="week-num">WEEK 10</span>
+        <h3>Orchestration: graphs, supervisor/worker, human-in-the-loop</h3>
+        <div class="tags"><span class="tag lvl">Advanced</span></div>
+      </div>
+      <div class="block"><div class="lab">Learning objectives</div>
+        <ul class="clean">
+          <li><strong>Implement</strong> a supervisor/worker orchestration where a supervisor routes tasks to workers.</li>
+          <li><strong>Build</strong> a human-in-the-loop checkpoint that pauses the graph for approval before a consequential action.</li>
+          <li><strong>Design</strong> an orchestration graph diagram for your capstone.</li>
+        </ul>
+      </div>
+      <div class="block"><div class="lab">Topics <span class="hint">— click to open its explainer</span></div>
+        <div class="chips">
+          <a class="topic-chip" href="topics.html#supervisor-worker">Supervisor / worker</a>
+          <a class="topic-chip" href="topics.html#conditional-routing">Conditional routing</a>
+          <a class="topic-chip" href="topics.html#parallel-workers">Parallel workers</a>
+          <a class="topic-chip" href="topics.html#interrupts-checkpoints">Interrupts &amp; checkpoints</a>
+          <a class="topic-chip" href="topics.html#human-in-the-loop">Human-in-the-loop</a>
+          <a class="topic-chip" href="topics.html#state-persistence">State persistence</a>
+        </div>
+      </div>
+      <div class="block"><div class="lab">Hands-on lab</div><p>Build a supervisor agent that dispatches to 2+ workers and add a <strong>human-in-the-loop interrupt</strong>: the graph pauses for your approval before a "sensitive" tool, then resumes.</p></div>
+      <div class="deliverable"><div class="lab">Capstone milestone · due Week 10</div><p>Submit your architecture sketch (agents/graph, tools, data flow, handoffs, human gates). Wire at least one human-approval checkpoint into a prototype.</p></div>
+      <div class="block bufnote"><div class="lab">Buffer this week</div><p>Break used to workshop architecture diagrams in pairs before they become the capstone milestone.</p></div>
+    </article>
+
+    <article class="week" id="w11">
+      <div class="week-head">
+        <span class="week-num">WEEK 11</span>
+        <h3>Agents in the real world: context engineering &amp; MCP</h3>
+        <div class="tags"><span class="tag lvl">Advanced</span></div>
+      </div>
+      <div class="block"><div class="lab">Learning objectives</div>
+        <ul class="clean">
+          <li><strong>Apply</strong> context-engineering techniques (what to put in context, when, and how to compress it) to improve reliability and cost.</li>
+          <li><strong>Integrate</strong> an external system via the <strong>Model Context Protocol (MCP)</strong>.</li>
+          <li><strong>Evaluate</strong> the impact of context choices on a real task.</li>
+        </ul>
+      </div>
+      <div class="block"><div class="lab">Topics <span class="hint">— click to open its explainer</span></div>
+        <div class="chips">
+          <a class="topic-chip" href="topics.html#context-engineering">Context engineering</a>
+          <a class="topic-chip" href="topics.html#context-budget">Context window as a budget</a>
+          <a class="topic-chip" href="topics.html#mcp">Model Context Protocol (MCP)</a>
+          <a class="topic-chip" href="topics.html#connectors">Reusable connectors</a>
+        </div>
+      </div>
+      <div class="block"><div class="lab">Hands-on lab</div><p>Connect your agent to an MCP server and use its tools/resources. Then run a context-engineering pass on one agent: measure tokens/cost before and after compression and summarization.</p></div>
+      <div class="block homework"><div class="lab">Homework</div><p>Integrate one more MCP capability <em>or</em> apply context engineering to your capstone, and report the before/after cost and quality difference.</p></div>
+      <div class="block bufnote"><div class="lab">Buffer this week</div><p>Recap slot connects context engineering back to Week 6 memory — two sides of "managing what the model sees."</p></div>
+    </article>
+
+    <article class="week buffer" id="w12">
+      <div class="week-head">
+        <span class="week-num">WEEK 12</span>
+        <h3>Agent evaluation, tracing &amp; debugging + mid-capstone review</h3>
+        <div class="tags"><span class="tag lvl">Advanced</span><span class="tag buf">Checkpoint</span></div>
+      </div>
+      <div class="block"><div class="lab">Learning objectives</div>
+        <ul class="clean">
+          <li><strong>Build</strong> an evaluation harness: a labeled test set plus metrics for an agent task.</li>
+          <li><strong>Instrument</strong> an agent with tracing and <strong>debug</strong> a failure by reading its trace.</li>
+          <li><strong>Evaluate</strong> your own capstone against its stated success criteria so far.</li>
+        </ul>
+      </div>
+      <div class="block"><div class="lab">Topics <span class="hint">— click to open its explainer</span></div>
+        <div class="chips">
+          <a class="topic-chip" href="topics.html#eval-sets">Offline evaluation sets</a>
+          <a class="topic-chip" href="topics.html#eval-metrics">Evaluation metrics</a>
+          <a class="topic-chip" href="topics.html#llm-as-judge">LLM-as-judge</a>
+          <a class="topic-chip" href="topics.html#tracing">Tracing &amp; observability</a>
+          <a class="topic-chip" href="topics.html#systematic-debugging">Systematic debugging</a>
+        </div>
+        <p style="margin-top:12px;color:var(--muted);">Lighter new content — consolidation + review.</p>
+      </div>
+      <div class="block"><div class="lab">Hands-on lab</div><p>Add tracing to an agent and build a small eval suite (5–10 labeled cases) that scores it automatically. Use a trace to diagnose one real failure and fix it.</p></div>
+      <div class="deliverable"><div class="lab">Mid-capstone review · graded checkpoint · due Week 12</div><p>Present a 5-minute status: working core loop, one real tool, and first eval cases. Give and receive peer feedback.</p></div>
+      <div class="block bufnote"><div class="lab">Buffer this week</div><p><strong>Checkpoint week:</strong> most of class is structured mid-capstone reviews and unblocking. Evaluation is taught now because you apply it to your own project immediately.</p></div>
+    </article>
+
+    <!-- ============ MONTH 4 ============ -->
+    <div class="month" id="month4">
+      <span class="mnum">MONTH 4</span>
+      <h2>Production agents &amp; capstone</h2>
+      <span class="mmeta">Weeks 13–16 · advanced</span>
+    </div>
+
+    <article class="week" id="w13">
+      <div class="week-head">
+        <span class="week-num">WEEK 13</span>
+        <h3>Reliability: retries, caching, fallbacks, cost &amp; latency</h3>
+        <div class="tags"><span class="tag lvl">Advanced</span></div>
+      </div>
+      <div class="block"><div class="lab">Learning objectives</div>
+        <ul class="clean">
+          <li><strong>Implement</strong> retries with backoff, response caching, and model/tool fallbacks in an agent.</li>
+          <li><strong>Measure and budget</strong> cost and latency for an agent run, and <strong>optimize</strong> one bottleneck.</li>
+          <li><strong>Evaluate</strong> reliability improvements with before/after numbers.</li>
+        </ul>
+      </div>
+      <div class="block"><div class="lab">Topics <span class="hint">— click to open its explainer</span></div>
+        <div class="chips">
+          <a class="topic-chip" href="topics.html#retries-backoff">Retries with backoff</a>
+          <a class="topic-chip" href="topics.html#caching">Caching</a>
+          <a class="topic-chip" href="topics.html#fallback-chains">Fallback chains</a>
+          <a class="topic-chip" href="topics.html#cost-latency">Measuring cost &amp; latency</a>
+          <a class="topic-chip" href="topics.html#reliability-triangle">Reliability / cost / quality</a>
+        </div>
+      </div>
+      <div class="block"><div class="lab">Hands-on lab</div><p>Harden an agent: add retries with backoff, cache an expensive tool or model call, and add a fallback model. Produce a table of cost and p50/p95 latency before and after.</p></div>
+      <div class="block homework"><div class="lab">Homework</div><p>Apply reliability features to your capstone (part of the Week 14 milestone) and record the cost/latency impact.</p></div>
+      <div class="block bufnote"><div class="lab">Buffer this week</div><p>Wrap Q&amp;A on cost surprises — everyone shares their biggest bill and how they'd cut it.</p></div>
+    </article>
+
+    <article class="week" id="w14">
+      <div class="week-head">
+        <span class="week-num">WEEK 14</span>
+        <h3>Safety &amp; security: prompt injection, guardrails, permissions</h3>
+        <div class="tags"><span class="tag lvl">Advanced</span></div>
+      </div>
+      <div class="block"><div class="lab">Learning objectives</div>
+        <ul class="clean">
+          <li><strong>Demonstrate</strong> a prompt-injection attack against a tool-using agent and <strong>implement</strong> a mitigation.</li>
+          <li><strong>Build</strong> input/output guardrails and a <strong>least-privilege</strong> permission model for agent tools.</li>
+          <li><strong>Assess</strong> an agent for common security risks and document the residual risk.</li>
+        </ul>
+      </div>
+      <div class="block"><div class="lab">Topics <span class="hint">— click to open its explainer</span></div>
+        <div class="chips">
+          <a class="topic-chip" href="topics.html#prompt-injection">Prompt injection (direct &amp; indirect)</a>
+          <a class="topic-chip" href="topics.html#confused-deputy">Confused-deputy problem</a>
+          <a class="topic-chip" href="topics.html#guardrails">Guardrails</a>
+          <a class="topic-chip" href="topics.html#least-privilege">Least-privilege permissions</a>
+          <a class="topic-chip" href="topics.html#data-exfiltration">Data-exfiltration risks</a>
+          <a class="topic-chip" href="topics.html#owasp-llm">OWASP LLM risks</a>
+        </div>
+      </div>
+      <div class="block"><div class="lab">Hands-on lab</div><p>Attack your own agent: craft an indirect prompt injection hidden in a document/tool result that makes it misbehave. Then defend it — add a guardrail and tighten permissions so the attack fails. Show both the successful attack and the successful defense.</p></div>
+      <div class="deliverable"><div class="lab">Capstone milestone · reliability + safety · due Week 14</div><p>Complete the safety pass on your capstone: at least one guardrail and a documented least-privilege permission story, alongside the Week 13 reliability features.</p></div>
+      <div class="block bufnote"><div class="lab">Buffer this week</div><p>Break used for a live "red team the instructor's agent" exercise — attacks are stickier as a group sport.</p></div>
+    </article>
+
+    <article class="week" id="w15">
+      <div class="week-head">
+        <span class="week-num">WEEK 15</span>
+        <h3>Deploying &amp; operating agents (serving, monitoring, LLMOps)</h3>
+        <div class="tags"><span class="tag lvl">Advanced</span></div>
+      </div>
+      <div class="block"><div class="lab">Learning objectives</div>
+        <ul class="clean">
+          <li><strong>Deploy</strong> an agent as a service (FastAPI endpoint, containerized) reachable over HTTP.</li>
+          <li><strong>Implement</strong> production monitoring: logging, tracing, and basic metrics/alerts.</li>
+          <li><strong>Explain</strong> the core LLMOps loop (observe → evaluate → improve) for a live agent.</li>
+        </ul>
+      </div>
+      <div class="block"><div class="lab">Topics <span class="hint">— click to open its explainer</span></div>
+        <div class="chips">
+          <a class="topic-chip" href="topics.html#agent-as-api">Serving an agent as an API</a>
+          <a class="topic-chip" href="topics.html#session-state">Statelessness vs. session state</a>
+          <a class="topic-chip" href="topics.html#streaming">Streaming responses</a>
+          <a class="topic-chip" href="topics.html#containerizing">Containerizing (Docker)</a>
+          <a class="topic-chip" href="topics.html#monitoring">Production monitoring</a>
+          <a class="topic-chip" href="topics.html#llmops-loop">The LLMOps loop</a>
+        </div>
+      </div>
+      <div class="block"><div class="lab">Hands-on lab</div><p>Wrap your agent in a FastAPI endpoint, containerize it, and deploy it somewhere reachable. Add request logging + tracing and a minimal metrics view.</p></div>
+      <div class="deliverable"><div class="lab">Capstone milestone · deploy + monitor · due Week 15</div><p>Deploy your capstone with tracing and basic monitoring. It must be reachable and instrumented for demo day.</p></div>
+      <div class="block bufnote"><div class="lab">Buffer this week</div><p>Wrap Q&amp;A is a deployment troubleshooting clinic — because something always breaks in prod. We confirm every capstone is reachable before demo day.</p></div>
+    </article>
+
+    <article class="week buffer" id="w16">
+      <div class="week-head">
+        <span class="week-num">WEEK 16</span>
+        <h3>Capstone demos, feedback &amp; what's next</h3>
+        <div class="tags"><span class="tag lvl">Advanced</span><span class="tag buf">Wrap</span></div>
+      </div>
+      <div class="block"><div class="lab">Learning objectives</div>
+        <ul class="clean">
+          <li><strong>Present</strong> and <strong>defend</strong> your capstone: architecture, evaluation results, reliability/safety choices, and cost.</li>
+          <li><strong>Evaluate</strong> peers' agents with structured, constructive feedback.</li>
+          <li><strong>Plan</strong> your continued learning path in a fast-moving field.</li>
+        </ul>
+      </div>
+      <div class="block"><div class="lab">Topics <span class="hint">— click to open its explainer</span></div>
+        <div class="chips">
+          <a class="topic-chip" href="topics.html#presenting-agents">Presenting an agent honestly</a>
+          <a class="topic-chip" href="topics.html#peer-review-rubric">The peer-review rubric</a>
+        </div>
+        <p style="margin-top:12px;color:var(--muted);">Plus: reflecting on trade-offs, where the field is heading (patterns over tools), and building a portfolio.</p>
+      </div>
+      <div class="block"><div class="lab">Hands-on — demo day</div><p>Each learner/team gives a 6–8 minute live demo + defense. The rest of the class runs structured peer review against a shared rubric (works · evaluated · reliable · safe · deployed).</p></div>
+      <div class="deliverable"><div class="lab">Final deliverable · end of Week 16</div><p>Capstone submission: repo + design doc + live endpoint/UI + eval results + demo.</p></div>
+      <div class="block bufnote"><div class="lab">Buffer this week</div><p><strong>Wrap week:</strong> light on new content. Time protected for demos, peer feedback, a course retrospective, and a "what to learn next" roadmap so momentum outlasts the course.</p></div>
+    </article>
+
+    <!-- MAP -->
+    <section class="sec" id="map">
+      <div class="kicker">Appendix</div>
+      <h2>Outcome → assessment map</h2>
+      <div class="twrap">
+        <table>
+          <thead><tr><th>Course outcome</th><th>Primarily assessed by</th></tr></thead>
+          <tbody>
+            <tr><td>1 · Explain agent anatomy &amp; when to use</td><td><a href="#w1">W1</a> lab/HW, participation</td></tr>
+            <tr><td>2 · Hand-implement ReAct / reflection</td><td><a href="#w3">W3–4</a> labs, mini-project</td></tr>
+            <tr><td>3 · Robust tool design</td><td><a href="#w5">W5</a> lab/HW, capstone</td></tr>
+            <tr><td>4 · Memory + retrieval grounding</td><td><a href="#w6">W6</a> lab/HW, capstone</td></tr>
+            <tr><td>5 · Multi-agent + orchestration + HITL</td><td><a href="#w9">W9–10</a> labs, capstone</td></tr>
+            <tr><td>6 · Context engineering + MCP</td><td><a href="#w11">W11</a> lab/HW, capstone</td></tr>
+            <tr><td>7 · Evaluate, trace, debug</td><td><a href="#w12">W12</a> lab, capstone eval suite</td></tr>
+            <tr><td>8 · Reliability &amp; cost</td><td><a href="#w13">W13</a> lab, capstone milestone</td></tr>
+            <tr><td>9 · Safety &amp; security</td><td><a href="#w14">W14</a> lab, capstone milestone</td></tr>
+            <tr><td>10 · Deploy &amp; operate</td><td><a href="#w15">W15</a> lab, capstone deployment</td></tr>
+            <tr><td>11 · Deliver &amp; defend end-to-end</td><td>Capstone + <a href="#w16">W16</a> demo</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <footer>
+        <p>This syllabus is a living document — specific tools may be swapped as the field evolves, but the learning outcomes and the pattern-first approach will not.</p>
+        <a class="backtop" href="#top">↑ Back to top</a>
+      </footer>
+    </section>
+  </main>
+</div>
+
+<script>
+  (function () {
+    // Theme toggle
+    var root = document.documentElement;
+    var btn = document.getElementById('themeToggle');
+    var label = document.getElementById('themeLabel');
+    function apply(t) {
+      if (t === 'dark' || t === 'light') { root.setAttribute('data-theme', t); }
+      else { root.removeAttribute('data-theme'); }
+      var isDark = t === 'dark' || (t !== 'light' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+      if (label) label.textContent = isDark ? 'Dark' : 'Light';
+    }
+    var saved = null;
+    try { saved = localStorage.getItem('syl-theme'); } catch (e) {}
+    apply(saved || 'system');
+    btn.addEventListener('click', function () {
+      var cur = root.getAttribute('data-theme');
+      var isDark = cur === 'dark' || (!cur && window.matchMedia('(prefers-color-scheme: dark)').matches);
+      var next = isDark ? 'light' : 'dark';
+      apply(next);
+      try { localStorage.setItem('syl-theme', next); } catch (e) {}
+    });
+
+    // Progress bar
+    var bar = document.getElementById('progress');
+    function onScroll() {
+      var h = document.documentElement;
+      var max = h.scrollHeight - h.clientHeight;
+      var pct = max > 0 ? (h.scrollTop / max) * 100 : 0;
+      bar.style.width = pct + '%';
+    }
+    document.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+
+    // Mobile nav
+    var sidebar = document.getElementById('sidebar');
+    var navToggle = document.getElementById('navToggle');
+    var scrim = document.getElementById('scrim');
+    function closeNav() { sidebar.classList.remove('open'); scrim.classList.remove('show'); navToggle.setAttribute('aria-expanded', 'false'); }
+    function openNav() { sidebar.classList.add('open'); scrim.classList.add('show'); navToggle.setAttribute('aria-expanded', 'true'); }
+    navToggle.addEventListener('click', function () { sidebar.classList.contains('open') ? closeNav() : openNav(); });
+    scrim.addEventListener('click', closeNav);
+
+    // Scrollspy
+    var links = Array.prototype.slice.call(document.querySelectorAll('.toc-link'));
+    var map = {};
+    links.forEach(function (l) {
+      var id = l.getAttribute('href').slice(1);
+      var el = document.getElementById(id);
+      if (el) map[id] = l;
+      l.addEventListener('click', function () { if (window.innerWidth <= 900) closeNav(); });
+    });
+    var targets = Object.keys(map).map(function (id) { return document.getElementById(id); });
+    var current = null;
+    var obs = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) {
+          var id = e.target.id;
+          if (current) current.classList.remove('active');
+          if (map[id]) { map[id].classList.add('active'); current = map[id];
+            if (typeof current.scrollIntoView === 'function' && window.innerWidth > 900) {
+              var r = current.getBoundingClientRect();
+              if (r.top < 70 || r.bottom > window.innerHeight) current.scrollIntoView({ block: 'nearest' });
+            }
+          }
+        }
+      });
+    }, { rootMargin: '-45% 0px -50% 0px', threshold: 0 });
+    targets.forEach(function (t) { obs.observe(t); });
+  })();
+</script>
+
+</body>
+</html>
