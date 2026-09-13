@@ -122,7 +122,33 @@
   .icon-btn:active { transform: translateY(1px); }
   .icon-btn svg { width: 15px; height: 15px; }
   .icon-btn.solid { background: var(--accent-soft); border-color: var(--accent-line); color: var(--accent-ink); text-decoration: none; }
+  .icon-btn { white-space: nowrap; }
   #navToggle { display: none; }
+  @media (max-width: 580px) {
+    .topbar { gap: 8px; padding: 8px 12px; }
+    .brand-sub { display: none; }
+    #themeLabel { display: none; }
+    .icon-btn { height: 34px; padding: 0 10px; }
+  }
+
+  /* two-part site navigator */
+  .parts { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 26px; }
+  .parts .part { display: flex; align-items: center; gap: 13px; padding: 15px 17px; border-radius: var(--radius); border: 1px solid var(--border); background: var(--surface); box-shadow: var(--shadow-sm); text-decoration: none; color: var(--ink); transition: border-color .15s, transform .05s, box-shadow .15s; }
+  .parts a.part:hover { border-color: var(--accent); box-shadow: var(--shadow); }
+  .parts a.part:active { transform: translateY(1px); }
+  .parts .part.current { background: var(--accent-soft); border-color: var(--accent-line); }
+  .parts .pnum { flex: none; width: 30px; height: 30px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-family: var(--font-mono); font-weight: 600; font-size: 14px; background: var(--accent); color: var(--surface); }
+  .parts .part.current .pnum { background: var(--accent-ink); }
+  .parts .ptext b { display: block; font-family: var(--font-display); font-size: 1.02rem; font-weight: 600; letter-spacing: -.01em; }
+  .parts .ptext small { color: var(--muted); font-size: .84rem; line-height: 1.35; display: block; margin-top: 1px; }
+  @media (max-width: 560px) { .parts { grid-template-columns: 1fr; } }
+
+  /* cross-page footer link */
+  .pagelink { display: flex; align-items: center; justify-content: space-between; gap: 14px; flex-wrap: wrap; margin-top: 26px; padding: 18px 20px; border-radius: var(--radius); border: 1px solid var(--accent-line); background: var(--accent-soft); text-decoration: none; color: var(--ink); }
+  .pagelink:hover { border-color: var(--accent); }
+  .pagelink .pl-text b { display: block; font-family: var(--font-display); font-size: 1.1rem; color: var(--accent-ink); }
+  .pagelink .pl-text small { color: var(--muted); }
+  .pagelink .pl-go { font-family: var(--font-mono); font-size: 13px; color: var(--accent-ink); white-space: nowrap; }
 
   /* layout */
   .layout {
@@ -351,7 +377,7 @@
   <button class="icon-btn" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
   </button>
-  <span class="brand"><b>Agentic AI</b> &nbsp;/&nbsp; Syllabus</span>
+  <span class="brand"><b>Agentic AI</b><span class="brand-sub">&nbsp;/&nbsp; Syllabus</span></span>
   <span class="spacer"></span>
   <a class="icon-btn solid" href="topics.html">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
@@ -419,7 +445,7 @@
     <header class="hero" id="top">
       <span class="eyebrow">16-week hands-on course</span>
       <h1 class="title">Agentic AI — From Foundations to Advanced Systems</h1>
-      <p class="subtitle">Designing, building, evaluating, and shipping AI agents. For people who already know ML and LLMs — and want to make agents that actually work.</p>
+      <p class="subtitle">Learn to build AI agents step by step — from your first tool-using agent to a full system you can put online. For people who already know the basics of ML and LLMs.</p>
       <div class="facts">
         <div class="fact"><span class="k">Duration</span><span class="v">16 weeks</span></div>
         <div class="fact"><span class="k">Format</span><span class="v">3 hrs / week</span></div>
@@ -428,19 +454,30 @@
         <div class="fact"><span class="k">Stack</span><span class="v">Python · LangGraph</span></div>
         <div class="fact"><span class="k">Capstone</span><span class="v">Deployed agent</span></div>
       </div>
+
+      <nav class="parts" aria-label="The two parts of this site">
+        <div class="part current">
+          <span class="pnum">1</span>
+          <span class="ptext"><b>Syllabus</b><small>You are here — the full course plan, week by week.</small></span>
+        </div>
+        <a class="part" href="topics.html">
+          <span class="pnum">2</span>
+          <span class="ptext"><b>Topic Guide →</b><small>Every topic explained in simple words, with an example.</small></span>
+        </a>
+      </nav>
     </header>
 
     <!-- ASSUMPTIONS -->
     <section class="sec" id="overview">
       <div class="kicker">01 — Orientation</div>
       <h2>Course description &amp; rationale</h2>
-      <p class="lead">Agents are what you get when you stop treating a language model as a text box and start treating it as the reasoning core of a system that can decide, act, observe, and try again. This course is about building those systems well.</p>
-      <p>We assume you already understand machine-learning basics, how large language models work, prompting, and embeddings — so we spend <strong>zero</strong> time re-explaining them. Instead, from day one we focus on what is genuinely new and genuinely hard: giving a model a loop, tools, memory, and autonomy, and keeping the result reliable, safe, and affordable.</p>
-      <p>Over 16 weeks you move from building a single tool-using agent by hand, to multi-agent systems with supervisors and human-in-the-loop checkpoints, to production concerns — evaluation, tracing, reliability, security, and deployment. You will write a lot of Python. By the end you will have a portfolio of labs and a deployed capstone agent that a stranger could actually use.</p>
+      <p class="lead">An AI agent is a program that uses a language model to think, take actions with tools, look at the result, and try again — until the job is done. This course teaches you how to build agents like this, and how to make them work well.</p>
+      <p>You already know the basics: machine learning, how LLMs work, prompting, and embeddings. So we will not repeat them. From day one, we focus on what is new and hard — giving a model a loop, tools, and memory, and keeping it reliable, safe, and low-cost.</p>
+      <p>Over 16 weeks, you start by building one simple agent by hand. Then you build teams of agents that work together and pause for human approval. Finally, you learn to test, secure, and launch agents for real use. You will write a lot of Python. By the end, you will have many small projects and one finished agent that anyone can use online.</p>
 
       <h3>Why this course, why now</h3>
-      <p>Most "AI agent" material is either a marketing demo (works once, on stage) or a framework tutorial (teaches the API, not the ideas). Both age badly, because the tools change every few months. This course is built on the opposite bet: <strong>the durable skill is understanding agent patterns</strong> — the loop, tool design, memory, orchestration, evaluation, guardrails — well enough that you can pick up whatever framework is current next year in an afternoon.</p>
-      <p>So we build things by hand before reaching for a framework (you implement a ReAct loop from scratch in <a href="#w3">Week&nbsp;3</a> before touching LangGraph in <a href="#w7">Week&nbsp;7</a>), and we treat evaluation, reliability, and security as first-class engineering — the parts that separate a demo from a product.</p>
+      <p>Most agent tutorials are one of two kinds: a flashy demo that works only once, or a tool guide that teaches the buttons, not the ideas. Both go out of date fast, because tools change every few months. This course does the opposite. <strong>It teaches the ideas that last</strong> — the loop, tools, memory, teamwork, testing, and safety. Learn these well, and you can pick up any new tool in an afternoon.</p>
+      <p>That is why you build things by hand first. You write a ReAct loop yourself in <a href="#w3">Week&nbsp;3</a>, before you touch a framework like LangGraph in <a href="#w7">Week&nbsp;7</a>. And we treat testing, reliability, and security as real work — because these are what turn a demo into a product.</p>
 
       <div class="callout">
         <p><strong>Assumptions I made (adjust freely):</strong> cohort-based, synchronous delivery (in-person or live online), sessions recorded &nbsp;·&nbsp; provider-agnostic examples (Claude by default; any API works) &nbsp;·&nbsp; LangGraph as the framework spine, with CrewAI &amp; AutoGen for comparison &nbsp;·&nbsp; class of 12–30, solo labs and team capstones &nbsp;·&nbsp; roughly $20–40 of API credit per learner across the term.</p>
@@ -475,7 +512,7 @@
           </ul>
         </div>
       </div>
-      <div class="callout"><p><strong>Quick self-check:</strong> if you can write a Python function that calls an LLM API, parses the JSON response, and handles an error — you are ready.</p></div>
+      <div class="callout"><p><strong>Quick self-check:</strong> can you write a Python function that calls an LLM API, reads the JSON reply, and handles an error? If yes, you are ready.</p></div>
     </section>
 
     <!-- OUTCOMES -->
@@ -537,7 +574,7 @@
     <section class="sec" id="session">
       <div class="kicker">05 — The weekly rhythm</div>
       <h2>The 3-hour session structure</h2>
-      <p>Every week follows the same rhythm, so you always know where you are. Total <strong>180 minutes</strong>, with about <strong>40 minutes of buffer</strong> (recap, break, wrap Q&amp;A) baked into each session.</p>
+      <p>Every week has the same shape, so you always know what comes next. Each class is <strong>180 minutes</strong> long. About <strong>40 minutes</strong> is free time — recap, a break, and questions — built into every class.</p>
       <div class="twrap">
         <table>
           <thead><tr><th>Segment</th><th class="num">Clock</th><th class="num">Length</th><th>Purpose</th></tr></thead>
@@ -552,7 +589,7 @@
           </tbody>
         </table>
       </div>
-      <div class="callout warm"><p><strong>Where the buffer lives:</strong> ~40 min per session absorbs the normal friction of hands-on work. On top of that, <strong>Weeks 4, 8, and 12 are lighter checkpoint weeks</strong> with less new material — deliberate room to catch up, consolidate, and review capstone progress.</p></div>
+      <div class="callout warm"><p><strong>Where the free time sits:</strong> about 40 minutes each class gives room for the normal bumps of hands-on work. On top of that, <strong>Weeks 4, 8, and 12 are lighter "catch-up" weeks</strong> with less new material — time to slow down, review, and check your capstone.</p></div>
     </section>
 
     <!-- ASSESSMENT -->
@@ -572,15 +609,15 @@
           </tbody>
         </table>
       </div>
-      <div class="callout"><p>Labs are graded lightly (done-and-works) so you can experiment without fear. The capstone is where depth is rewarded.</p></div>
+      <div class="callout"><p>Labs are graded gently — if it works, you pass — so you can try things without worry. Your capstone is where careful, deep work earns the most marks.</p></div>
     </section>
 
     <!-- CAPSTONE -->
     <section class="sec" id="capstone">
       <div class="kicker">07 — The main event</div>
       <h2>Capstone project</h2>
-      <p class="lead">Design, build, evaluate, and deploy an agent (or small multi-agent system) that does something genuinely useful. It must use tools, some form of memory or retrieval, and demonstrate reliability and safety thinking.</p>
-      <p>"A chatbot with no tools" does not qualify. "A research assistant that searches, reads, cross-checks, and drafts a cited summary" does. Good scopes: a personal research/summarization agent with citations; a codebase Q&amp;A agent over a real repo; a support-triage agent with human handoff; a data-analysis agent that queries a database and charts results; a multi-agent content pipeline (researcher → writer → editor).</p>
+      <p class="lead">Design, build, test, and launch an agent (or a small team of agents) that does something truly useful. It must use tools, use memory or retrieval, and show that you thought about reliability and safety.</p>
+      <p>A plain chatbot with no tools does not count. A research helper that searches, reads, checks facts, and writes a summary with sources does count. Some good ideas: a research helper that shows its sources; a Q&amp;A agent for a real code repo; a support agent that passes hard cases to a human; a data agent that reads a database and draws charts; or a team of agents (researcher → writer → editor).</p>
       <div class="grid2">
         <div>
           <h3>Requirements</h3>
@@ -639,10 +676,10 @@
         </div>
         <div>
           <h3>Policies</h3>
-          <p><strong>Attendance.</strong> Up to 2 absences without penalty; beyond that, each costs 2 points off participation unless arranged in advance. Recordings help but don't replace in-class lab help.</p>
-          <p><strong>Late work.</strong> Labs/homework: −10% per day up to 3 days, then no credit — but "best 10 of 12 labs" gives everyone slack for two bad weeks. Capstone milestone dates are firm (they gate feedback); talk to me <em>before</em> a deadline if life happens.</p>
-          <p><strong>Academic integrity.</strong> Using AI tools is encouraged — often the point. The rule: <strong>you must understand and be able to explain everything you submit.</strong> Cite substantial adapted code. Collaboration on labs is fine; copying homework or capstone work is not. Transparency is never penalized.</p>
-          <p><strong>Accessibility.</strong> Tell me early about accommodations and I'll make them. There are no dumb questions in a field this young.</p>
+          <p><strong>Attendance.</strong> You can miss up to 2 classes with no penalty. After that, each missed class costs 2 points from your participation grade, unless you arrange it with me first. Recordings help, but they cannot replace live lab help.</p>
+          <p><strong>Late work.</strong> Labs and homework lose 10% per day, up to 3 days late; after that, no marks. But only your best 10 of 12 labs count, so two bad weeks will not hurt you. Capstone dates are firm, because they control feedback. If life gets in the way, talk to me <em>before</em> the deadline.</p>
+          <p><strong>Honesty.</strong> Using AI tools is welcome — that is often the point. One rule: <strong>you must understand and be able to explain everything you hand in.</strong> Credit any big piece of code you borrow. Working together on labs is fine; copying someone's homework or capstone is not. Being open about your help is never punished.</p>
+          <p><strong>Support.</strong> If you need any changes to take part fully, tell me early and I will arrange them. In a field this new, there are no silly questions.</p>
         </div>
       </div>
     </section>
@@ -651,7 +688,7 @@
     <section class="sec" id="resources">
       <div class="kicker">09 — Keep learning</div>
       <h2>Suggested resources</h2>
-      <div class="callout warm"><p><strong>The field moves fast</strong> — treat every specific tool as temporary and every <em>pattern</em> as durable. Anything named here may be renamed or superseded; the concept underneath won't be.</p></div>
+      <div class="callout warm"><p><strong>This field moves fast.</strong> Treat every tool name as temporary, and every <em>idea</em> as lasting. A tool named here may be renamed or replaced — but the idea behind it stays useful.</p></div>
       <div class="grid2">
         <div>
           <h3>Primary (always current)</h3>
@@ -1155,8 +1192,12 @@
           </tbody>
         </table>
       </div>
+      <a class="pagelink" href="topics.html">
+        <span class="pl-text"><b>Next: open the Topic Guide →</b><small>Every topic above, explained in simple words with an example.</small></span>
+        <span class="pl-go">Part 2 of 2</span>
+      </a>
       <footer>
-        <p>This syllabus is a living document — specific tools may be swapped as the field evolves, but the learning outcomes and the pattern-first approach will not.</p>
+        <p>This plan can change as the field grows. The tools may change, but the skills you learn here will stay useful.</p>
         <a class="backtop" href="#top">↑ Back to top</a>
       </footer>
     </section>
