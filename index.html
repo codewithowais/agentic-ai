@@ -493,9 +493,9 @@
           <h3>Required</h3>
           <ul class="clean">
             <li>Comfortable writing Python: functions, classes, type hints, virtual environments, reading a traceback, basic <code>async</code>/<code>await</code>.</li>
-            <li>Working knowledge of AI/ML and LLM fundamentals — tokens, embeddings, context windows, prompting, and conceptually how RAG works.</li>
+            <li>You know the basics of AI/ML and LLMs — tokens, embeddings, context windows, prompting, and roughly how RAG works.</li>
             <li>Basic command line and Git (clone, branch, commit, push).</li>
-            <li>Able to read JSON and reason about API request/response shapes.</li>
+            <li>You can read JSON and understand what an API request and reply look like.</li>
           </ul>
         </div>
         <div>
@@ -503,7 +503,7 @@
           <ul class="clean">
             <li>Prior REST API experience.</li>
             <li>Basic Docker familiarity.</li>
-            <li>Exposure to a web framework (FastAPI / Flask).</li>
+            <li>Some use of a web framework (FastAPI / Flask).</li>
           </ul>
           <h3>We do <em>not</em> re-teach</h3>
           <ul class="clean">
@@ -524,17 +524,17 @@
         <table>
           <thead><tr><th class="num">#</th><th>You will be able to…</th><th>Assessed in</th></tr></thead>
           <tbody>
-            <tr><td class="num">1</td><td><strong>Explain &amp; diagram</strong> the anatomy of an agent and justify when an agentic approach is (and isn't) the right choice.</td><td class="num"><a href="#w1">W1</a></td></tr>
-            <tr><td class="num">2</td><td><strong>Implement</strong> a tool-using reasoning loop (ReAct, reflection) from scratch, without a framework.</td><td class="num"><a href="#w3">W3–4</a></td></tr>
-            <tr><td class="num">3</td><td><strong>Design</strong> robust agent tools with typed schemas, validation, and error handling against real APIs.</td><td class="num"><a href="#w5">W5</a></td></tr>
+            <tr><td class="num">1</td><td><strong>Explain and draw</strong> the parts of an agent, and say when an agent is (and isn't) the right choice.</td><td class="num"><a href="#w1">W1</a></td></tr>
+            <tr><td class="num">2</td><td><strong>Build</strong> a tool-using thinking loop (ReAct, reflection) from scratch, with no framework.</td><td class="num"><a href="#w3">W3–4</a></td></tr>
+            <tr><td class="num">3</td><td><strong>Design</strong> strong, reliable tools with typed inputs, checks, and error handling for real APIs.</td><td class="num"><a href="#w5">W5</a></td></tr>
             <tr><td class="num">4</td><td><strong>Build</strong> grounded agents combining working memory, long-term memory, and retrieval.</td><td class="num"><a href="#w6">W6</a></td></tr>
-            <tr><td class="num">5</td><td><strong>Construct</strong> multi-agent systems with explicit orchestration and human-in-the-loop checkpoints.</td><td class="num"><a href="#w9">W9–10</a></td></tr>
-            <tr><td class="num">6</td><td><strong>Integrate</strong> agents with the world via context engineering and the Model Context Protocol.</td><td class="num"><a href="#w11">W11</a></td></tr>
-            <tr><td class="num">7</td><td><strong>Evaluate, trace &amp; debug</strong> agent behavior with systematic methods, not vibes.</td><td class="num"><a href="#w12">W12</a></td></tr>
-            <tr><td class="num">8</td><td><strong>Engineer</strong> agents for reliability and cost: retries, caching, fallbacks, latency budgets.</td><td class="num"><a href="#w13">W13</a></td></tr>
-            <tr><td class="num">9</td><td><strong>Assess &amp; mitigate</strong> safety and security risks, including prompt injection, with guardrails and least privilege.</td><td class="num"><a href="#w14">W14</a></td></tr>
-            <tr><td class="num">10</td><td><strong>Deploy &amp; operate</strong> an agent as a monitored service, and articulate LLMOps basics.</td><td class="num"><a href="#w15">W15</a></td></tr>
-            <tr><td class="num">11</td><td><strong>Deliver</strong> an end-to-end capstone agent and defend your design decisions.</td><td class="num"><a href="#w16">W16</a></td></tr>
+            <tr><td class="num">5</td><td><strong>Build</strong> multi-agent systems with clear coordination and human-approval steps.</td><td class="num"><a href="#w9">W9–10</a></td></tr>
+            <tr><td class="num">6</td><td><strong>Connect</strong> agents to the world with context engineering and the Model Context Protocol.</td><td class="num"><a href="#w11">W11</a></td></tr>
+            <tr><td class="num">7</td><td><strong>Test, trace, and fix</strong> how an agent behaves, using clear methods — not guesswork.</td><td class="num"><a href="#w12">W12</a></td></tr>
+            <tr><td class="num">8</td><td><strong>Build</strong> agents that are reliable and low-cost: retries, caching, backups, speed budgets.</td><td class="num"><a href="#w13">W13</a></td></tr>
+            <tr><td class="num">9</td><td><strong>Find and reduce</strong> safety and security risks, including prompt injection, with guardrails and least privilege.</td><td class="num"><a href="#w14">W14</a></td></tr>
+            <tr><td class="num">10</td><td><strong>Deploy and run</strong> an agent as a watched service, and explain LLMOps basics.</td><td class="num"><a href="#w15">W15</a></td></tr>
+            <tr><td class="num">11</td><td><strong>Finish</strong> a full capstone agent and explain your design choices.</td><td class="num"><a href="#w16">W16</a></td></tr>
           </tbody>
         </table>
       </div>
@@ -580,12 +580,12 @@
           <thead><tr><th>Segment</th><th class="num">Clock</th><th class="num">Length</th><th>Purpose</th></tr></thead>
           <tbody>
             <tr><td><strong>Recap &amp; warm-up</strong> <span class="tag buf">buffer</span></td><td class="num">0:00–0:15</td><td class="num">15 min</td><td>Review last week, connect to today, homework questions.</td></tr>
-            <tr><td>Concept block I</td><td class="num">0:15–0:55</td><td class="num">40 min</td><td>New ideas with live-coded demos.</td></tr>
-            <tr><td>Guided lab · part 1</td><td class="num">0:55–1:35</td><td class="num">40 min</td><td>Hands-on, instructor circulating.</td></tr>
+            <tr><td>New ideas (part 1)</td><td class="num">0:15–0:55</td><td class="num">40 min</td><td>New ideas with live-coded demos.</td></tr>
+            <tr><td>Lab (part 1)</td><td class="num">0:55–1:35</td><td class="num">40 min</td><td>Hands-on, with the teacher walking around to help.</td></tr>
             <tr><td><strong>Break</strong> <span class="tag buf">buffer</span></td><td class="num">1:35–1:50</td><td class="num">15 min</td><td>—</td></tr>
-            <tr><td>Concept block II</td><td class="num">1:50–2:20</td><td class="num">30 min</td><td>Deeper / second topic, patterns, pitfalls.</td></tr>
-            <tr><td>Guided lab · part 2 + stretch</td><td class="num">2:20–2:50</td><td class="num">40 min</td><td>Finish the lab; stretch goals for the fast movers.</td></tr>
-            <tr><td><strong>Wrap, Q&amp;A &amp; homework brief</strong> <span class="tag buf">buffer</span></td><td class="num">2:50–3:00</td><td class="num">10 min</td><td>Debrief, assign homework, open questions.</td></tr>
+            <tr><td>New ideas (part 2)</td><td class="num">1:50–2:20</td><td class="num">30 min</td><td>A deeper or second topic, with patterns and common mistakes.</td></tr>
+            <tr><td>Lab (part 2) + extra</td><td class="num">2:20–2:50</td><td class="num">40 min</td><td>Finish the lab; extra goals for those who move fast.</td></tr>
+            <tr><td><strong>Wrap-up, questions &amp; homework</strong> <span class="tag buf">buffer</span></td><td class="num">2:50–3:00</td><td class="num">10 min</td><td>Wrap up, give homework, and answer questions.</td></tr>
           </tbody>
         </table>
       </div>
@@ -600,12 +600,12 @@
         <table>
           <thead><tr><th>Component</th><th class="num">Weight</th><th>What it covers</th></tr></thead>
           <tbody>
-            <tr><td>Weekly labs (best 10 of 12)</td><td class="wt num">25%</td><td>Completion + correctness of finished labs, submitted as PRs.</td></tr>
-            <tr><td>Homework assignments</td><td class="wt num">15%</td><td>Extending labs; short applied problems.</td></tr>
-            <tr><td>Mini-project (<a href="#w4">Week 4</a>)</td><td class="wt num">10%</td><td>A self-contained agent combining the loop + a reasoning pattern.</td></tr>
-            <tr><td>Checkpoints (<a href="#w8">W8</a> &amp; <a href="#w12">W12</a>)</td><td class="wt num">10%</td><td>Capstone proposal and mid-capstone review.</td></tr>
-            <tr><td>Capstone (<a href="#capstone">W13–16</a>)</td><td class="wt num">30%</td><td>Design, build, evaluate, deploy, and present an end-to-end agent.</td></tr>
-            <tr><td>Participation &amp; peer engagement</td><td class="wt num">10%</td><td>Attendance, contribution, peer code review, demo-day feedback.</td></tr>
+            <tr><td>Weekly labs (best 10 of 12)</td><td class="wt num">25%</td><td>Did the finished labs work? Handed in as PRs.</td></tr>
+            <tr><td>Homework assignments</td><td class="wt num">15%</td><td>Extending labs, plus short practice problems.</td></tr>
+            <tr><td>Mini-project (<a href="#w4">Week 4</a>)</td><td class="wt num">10%</td><td>A small agent that mixes the loop with a thinking method.</td></tr>
+            <tr><td>Checkpoints (<a href="#w8">W8</a> &amp; <a href="#w12">W12</a>)</td><td class="wt num">10%</td><td>Capstone plan and middle review.</td></tr>
+            <tr><td>Capstone (<a href="#capstone">W13–16</a>)</td><td class="wt num">30%</td><td>Design, build, test, put online, and present a full agent.</td></tr>
+            <tr><td>Taking part &amp; helping classmates</td><td class="wt num">10%</td><td>Coming to class, taking part, reviewing classmates' code, and demo-day feedback.</td></tr>
           </tbody>
         </table>
       </div>
@@ -622,13 +622,13 @@
         <div>
           <h3>Requirements</h3>
           <ul class="clean">
-            <li>At least 2 well-designed tools with schemas + error handling.</li>
-            <li>Memory and/or retrieval that meaningfully changes behavior.</li>
-            <li>An <strong>evaluation suite</strong> — a small labeled test set + metrics, not just a demo.</li>
-            <li>Reliability features (retries / fallbacks / caching) and a cost/latency note.</li>
-            <li>A safety pass: at least one guardrail and a least-privilege permission story.</li>
-            <li>Deployed and reachable (API or simple UI) with basic monitoring / tracing.</li>
-            <li>A short design doc + a 6–8 minute demo.</li>
+            <li>At least 2 well-made tools with typed inputs and error handling.</li>
+            <li>Memory and/or retrieval that really changes what the agent does.</li>
+            <li>A <strong>test set</strong> — a small labeled set of cases with scores, not just a demo.</li>
+            <li>Reliability features (retries, backups, caching) and a note on cost and speed.</li>
+            <li>A safety check: at least one guardrail and a least-privilege permission plan.</li>
+            <li>Put online and reachable (an API or simple UI) with basic monitoring and tracing.</li>
+            <li>A short design doc and a 6–8 minute demo.</li>
           </ul>
         </div>
         <div>
@@ -637,11 +637,11 @@
             <table>
               <thead><tr><th>Milestone</th><th class="num">Due</th></tr></thead>
               <tbody>
-                <tr><td>Proposal — problem, users, tools, success criteria</td><td class="num"><a href="#w8">W8</a></td></tr>
-                <tr><td>Architecture sketch — graph, tools, data flow, handoffs</td><td class="num"><a href="#w10">W10</a></td></tr>
-                <tr><td>Mid-capstone review — working core + first eval cases</td><td class="num"><a href="#w12">W12</a></td></tr>
-                <tr><td>Reliability + safety pass</td><td class="num"><a href="#w14">W14</a></td></tr>
-                <tr><td>Deploy + monitor</td><td class="num"><a href="#w15">W15</a></td></tr>
+                <tr><td>Plan — problem, users, tools, goals</td><td class="num"><a href="#w8">W8</a></td></tr>
+                <tr><td>Design sketch — graph, tools, data flow, handoffs</td><td class="num"><a href="#w10">W10</a></td></tr>
+                <tr><td>Middle review — working core + first test cases</td><td class="num"><a href="#w12">W12</a></td></tr>
+                <tr><td>Reliability + safety check</td><td class="num"><a href="#w14">W14</a></td></tr>
+                <tr><td>Put online + monitor</td><td class="num"><a href="#w15">W15</a></td></tr>
                 <tr><td>Final demo + design doc</td><td class="num"><a href="#w16">W16</a></td></tr>
               </tbody>
             </table>
@@ -698,8 +698,8 @@
           </ul>
           <h3>Habits</h3>
           <ul class="clean">
-            <li>Follow 2–3 practitioner blogs rather than trying to read everything.</li>
-            <li>Keep a personal "patterns notebook" — it outlasts any framework.</li>
+            <li>Follow 2–3 expert blogs instead of trying to read everything.</li>
+            <li>Keep your own "patterns notebook" — it lasts longer than any tool.</li>
           </ul>
         </div>
         <div>
@@ -730,9 +730,9 @@
       </div>
       <div class="block"><div class="lab">Learning objectives</div>
         <ul class="clean">
-          <li><strong>Define</strong> what distinguishes an agent from a plain LLM call, and <strong>identify</strong> the four components (model, tools, memory, loop) in an example system.</li>
-          <li><strong>Configure</strong> a working Python + API environment and <strong>run</strong> a minimal model call safely (keys in <code>.env</code>).</li>
-          <li><strong>Evaluate</strong> whether a given problem warrants an agent versus a simpler solution.</li>
+          <li><strong>Explain</strong> how an agent is different from a normal one-shot LLM call, and <strong>point out</strong> its four parts (model, tools, memory, loop) in an example.</li>
+          <li><strong>Set up</strong> a working Python + API setup and <strong>run</strong> a small model call safely (keys kept in <code>.env</code>).</li>
+          <li><strong>Decide</strong> when a problem needs an agent and when a simpler tool is better.</li>
         </ul>
       </div>
       <div class="block"><div class="lab">Topics <span class="hint">— click to open its explainer</span></div>
@@ -743,9 +743,9 @@
           <a class="topic-chip" href="topics.html#when-not-agent">When not to build an agent</a>
         </div>
       </div>
-      <div class="block"><div class="lab">Hands-on lab</div><p>Stand up the environment; run the smoke test. Then build a "proto-agent": a script that calls the model in a manual loop — the model proposes an action in text, you (the human) execute it and paste the result back. Feel the loop before automating it.</p></div>
-      <div class="block homework"><div class="lab">Homework</div><p>Write a one-page teardown of an existing agent product: identify its model / tools / memory / loop, and argue whether an agent was the right call. Verify your secrets setup with the provided checker.</p></div>
-      <div class="block bufnote"><div class="lab">Buffer this week</div><p>Extra recap and wrap time is reserved for <strong>environment triage</strong> — the classic Week 1 tax of keys, versions, and installs.</p></div>
+      <div class="block"><div class="lab">Hands-on lab</div><p>Set up your tools and run the test file. Then build a "pretend agent": a script where the model says an action in words, and you (the human) do it and paste the result back. This lets you feel how the loop works before you automate it.</p></div>
+      <div class="block homework"><div class="lab">Homework</div><p>Write one page about an agent product you know. Name its model, tools, memory, and loop, and say if an agent was really needed. Check your key setup with the checker we give you.</p></div>
+      <div class="block bufnote"><div class="lab">Buffer this week</div><p>Extra recap and wrap-up time is saved for <strong>setup help</strong> — the usual Week 1 trouble with keys, versions, and installs.</p></div>
     </article>
 
     <article class="week" id="w2">
@@ -756,9 +756,9 @@
       </div>
       <div class="block"><div class="lab">Learning objectives</div>
         <ul class="clean">
-          <li><strong>Implement</strong> function/tool calling: define a tool, expose it, parse the call, execute it, return the result.</li>
-          <li><strong>Explain</strong> the request/response cycle of tool use and <strong>debug</strong> a malformed tool call.</li>
-          <li><strong>Build</strong> a 2-tool agent that chooses between tools based on the request.</li>
+          <li><strong>Build</strong> tool calling: make a tool, show it to the model, read the call, run it, and return the result.</li>
+          <li><strong>Explain</strong> how a tool call works (request and reply), and <strong>fix</strong> a broken tool call.</li>
+          <li><strong>Build</strong> an agent with two tools that picks the right one for each request.</li>
         </ul>
       </div>
       <div class="block"><div class="lab">Topics <span class="hint">— click to open its explainer</span></div>
@@ -769,9 +769,9 @@
           <a class="topic-chip" href="topics.html#tool-failure-modes">Tool-call failure modes</a>
         </div>
       </div>
-      <div class="block"><div class="lab">Hands-on lab</div><p>Build a small agent with two tools (e.g. a calculator and a time/weather stub). Wire the full loop: user → model → tool call → execution → model → answer. Add logging so every tool call is visible.</p></div>
-      <div class="block homework"><div class="lab">Homework</div><p>Add a third tool and a test showing the agent picks the right tool for three different prompts. Note one case where it picked wrong and why.</p></div>
-      <div class="block bufnote"><div class="lab">Buffer this week</div><p>Break and wrap used for a "gallery walk" of everyone's tool logs — comparing how prompts changed tool selection.</p></div>
+      <div class="block"><div class="lab">Hands-on lab</div><p>Build a small agent with two tools (for example, a calculator and a time or weather tool). Connect the full loop: user → model → tool call → run it → model → answer. Add logging so you can see every tool call.</p></div>
+      <div class="block homework"><div class="lab">Homework</div><p>Add a third tool and a test that shows the agent picks the right tool for three different questions. Note one time it picked wrong, and why.</p></div>
+      <div class="block bufnote"><div class="lab">Buffer this week</div><p>The break and wrap-up are used for a quick group look at everyone's tool logs, to compare how different wording changed which tool was picked.</p></div>
     </article>
 
     <article class="week" id="w3">
@@ -782,9 +782,9 @@
       </div>
       <div class="block"><div class="lab">Learning objectives</div>
         <ul class="clean">
-          <li><strong>Implement</strong> a ReAct loop (reason → act → observe → repeat) from scratch, no framework.</li>
-          <li><strong>Design</strong> a stopping condition and max-iteration guard to prevent runaway loops.</li>
-          <li><strong>Trace</strong> a multi-step run and explain each reason/act/observe step.</li>
+          <li><strong>Build</strong> a ReAct loop (reason → act → observe → repeat) from scratch, with no framework.</li>
+          <li><strong>Add</strong> a stop rule and a max-step limit so the loop cannot run forever.</li>
+          <li><strong>Follow</strong> a multi-step run and explain each reason, act, and observe step.</li>
         </ul>
       </div>
       <div class="block"><div class="lab">Topics <span class="hint">— click to open its explainer</span></div>
@@ -795,9 +795,9 @@
           <a class="topic-chip" href="topics.html#agent-state">State across steps</a>
         </div>
       </div>
-      <div class="block"><div class="lab">Hands-on lab</div><p>Hand-roll a ReAct agent that answers multi-step questions using your Week 2 tools plus a search/lookup tool. It must show its reasoning trace, loop until it has an answer, and stop safely at a max step count.</p></div>
-      <div class="block homework"><div class="lab">Homework</div><p>Give your agent a task needing <strong>at least 3 tool calls</strong>. Capture the full trace and annotate where it reasoned well and where it wasted a step.</p></div>
-      <div class="block bufnote"><div class="lab">Buffer this week</div><p>Wrap Q&amp;A dedicated to debugging infinite loops and runaway costs — we set a hard iteration cap together.</p></div>
+      <div class="block"><div class="lab">Hands-on lab</div><p>Build a ReAct agent by hand that answers multi-step questions using your Week 2 tools plus a search tool. It must show its thinking, loop until it has an answer, and stop safely at a max number of steps.</p></div>
+      <div class="block homework"><div class="lab">Homework</div><p>Give your agent a task that needs <strong>at least 3 tool calls</strong>. Save the full trace and mark where it thought well and where it wasted a step.</p></div>
+      <div class="block bufnote"><div class="lab">Buffer this week</div><p>Wrap-up questions focus on fixing loops that never stop and costs that run away — we set a firm step limit together.</p></div>
     </article>
 
     <article class="week buffer" id="w4">
@@ -808,9 +808,9 @@
       </div>
       <div class="block"><div class="lab">Learning objectives</div>
         <ul class="clean">
-          <li><strong>Implement</strong> reflection (self-critique-then-revise) and <strong>self-consistency</strong> (sample-and-vote) on top of a base agent.</li>
-          <li><strong>Evaluate</strong> whether each pattern actually improves results, with before/after evidence.</li>
-          <li><strong>Deliver</strong> a self-contained mini-project agent combining the loop with a reasoning pattern.</li>
+          <li><strong>Build</strong> reflection (draft, then fix) and <strong>self-consistency</strong> (try a few times and vote) on top of a basic agent.</li>
+          <li><strong>Check</strong> whether each method really gives better results, with before-and-after proof.</li>
+          <li><strong>Finish</strong> a small project agent that mixes the loop with one thinking method.</li>
         </ul>
       </div>
       <div class="block"><div class="lab">Topics <span class="hint">— click to open its explainer</span></div>
@@ -820,9 +820,9 @@
         </div>
         <p style="margin-top:12px;color:var(--muted);">Plus: when extra reasoning helps vs. just costs more. Lighter new content — a consolidation + build week.</p>
       </div>
-      <div class="block"><div class="lab">Hands-on lab</div><p>Add a reflection step to your Week 3 agent; measure the difference on 3–5 test cases. Start the mini-project.</p></div>
-      <div class="deliverable"><div class="lab">Mini-project · graded 10% · due end of Week 5</div><p>Build a small agent that uses the loop <strong>plus</strong> at least one reasoning pattern to solve a task you choose (math word-problem solver, fact-checker, research helper). Include a short note on whether the reasoning pattern helped, with evidence.</p></div>
-      <div class="block bufnote"><div class="lab">Buffer this week</div><p><strong>Checkpoint week:</strong> reduced new material and protected time to catch up on Weeks 1–3 and start the mini-project with the instructor in the room.</p></div>
+      <div class="block"><div class="lab">Hands-on lab</div><p>Add a reflection step to your Week 3 agent, and measure the change on 3–5 test cases. Start the mini-project.</p></div>
+      <div class="deliverable"><div class="lab">Mini-project · graded 10% · due end of Week 5</div><p>Build a small agent that uses the loop <strong>plus</strong> at least one thinking method to solve a task you pick (a math word-problem solver, a fact-checker, or a research helper). Add a short note on whether the thinking method helped, with proof.</p></div>
+      <div class="block bufnote"><div class="lab">Buffer this week</div><p><strong>Catch-up week:</strong> less new material and saved time to catch up on Weeks 1–3 and start the mini-project with the teacher in the room.</p></div>
     </article>
 
     <!-- ============ MONTH 2 ============ -->
@@ -840,9 +840,9 @@
       </div>
       <div class="block"><div class="lab">Learning objectives</div>
         <ul class="clean">
-          <li><strong>Design</strong> production-quality tool schemas with clear descriptions, typed parameters (Pydantic), and validation.</li>
-          <li><strong>Implement</strong> error handling so a failing tool returns a useful message the agent can recover from — not a crash.</li>
-          <li><strong>Integrate</strong> a real third-party API as a tool, including auth and rate-limit handling.</li>
+          <li><strong>Design</strong> good tool descriptions with clear wording, typed inputs (Pydantic), and input checks.</li>
+          <li><strong>Add</strong> error handling so a failing tool returns a helpful message the agent can recover from — not a crash.</li>
+          <li><strong>Connect</strong> a real outside API as a tool, including keys and rate limits.</li>
         </ul>
       </div>
       <div class="block"><div class="lab">Topics <span class="hint">— click to open its explainer</span></div>
@@ -854,9 +854,9 @@
           <a class="topic-chip" href="topics.html#rate-limits">Secrets &amp; rate limits</a>
         </div>
       </div>
-      <div class="block"><div class="lab">Hands-on lab</div><p>Replace a stub tool with a <strong>real API</strong> (weather, search, or GitHub). Add Pydantic validation and graceful error returns. Deliberately break it (bad input, network error) and make the agent recover.</p></div>
-      <div class="block homework"><div class="lab">Homework</div><p>Add a second real-API tool and write 3 tests: happy path, invalid input, and API failure. The agent must degrade gracefully in the last two.</p></div>
-      <div class="block bufnote"><div class="lab">Buffer this week</div><p>Break used for a short clinic on reading API docs and handling auth — the part that trips everyone up.</p></div>
+      <div class="block"><div class="lab">Hands-on lab</div><p>Swap a fake tool for a <strong>real API</strong> (weather, search, or GitHub). Add Pydantic checks and friendly error messages. Break it on purpose (bad input, network error) and make the agent recover.</p></div>
+      <div class="block homework"><div class="lab">Homework</div><p>Add a second real-API tool and write 3 tests: normal use, bad input, and API failure. The agent must handle the last two smoothly.</p></div>
+      <div class="block bufnote"><div class="lab">Buffer this week</div><p>The break is used for a short lesson on reading API docs and handling keys — the part that trips people up.</p></div>
     </article>
 
     <article class="week" id="w6">
@@ -867,9 +867,9 @@
       </div>
       <div class="block"><div class="lab">Learning objectives</div>
         <ul class="clean">
-          <li><strong>Distinguish</strong> working memory (context window) from long-term memory (persisted) and <strong>implement</strong> both.</li>
-          <li><strong>Build</strong> a retrieval-augmented tool that grounds the agent in an external source.</li>
-          <li><strong>Evaluate</strong> how memory/retrieval changes behavior on repeated and knowledge-dependent tasks.</li>
+          <li><strong>Tell apart</strong> working memory (the context window) and long-term memory (saved), and <strong>build</strong> both.</li>
+          <li><strong>Build</strong> a retrieval tool that grounds the agent in an outside source.</li>
+          <li><strong>Check</strong> how memory and retrieval change what the agent does on repeated and fact-based tasks.</li>
         </ul>
       </div>
       <div class="block"><div class="lab">Topics <span class="hint">— click to open its explainer</span></div>
@@ -880,9 +880,9 @@
           <a class="topic-chip" href="topics.html#rag">RAG (grounding)</a>
         </div>
       </div>
-      <div class="block"><div class="lab">Hands-on lab</div><p>Add long-term memory (persisted across runs) and a <strong>retrieval tool</strong> over a small document set. Show it correctly answering a question that requires the retrieved docs — and admitting when the answer isn't there.</p></div>
-      <div class="block homework"><div class="lab">Homework</div><p>Point the retrieval tool at a corpus you care about. Produce 3 grounded Q&amp;A examples with citations to the source chunks.</p></div>
-      <div class="block bufnote"><div class="lab">Buffer this week</div><p>Wrap Q&amp;A on embeddings gotchas (chunking, stale indexes) and a preview of how this feeds the capstone.</p></div>
+      <div class="block"><div class="lab">Hands-on lab</div><p>Add long-term memory (saved between runs) and a <strong>retrieval tool</strong> over a small set of documents. Show it answering a question that needs those documents — and saying so when the answer is not there.</p></div>
+      <div class="block homework"><div class="lab">Homework</div><p>Point the retrieval tool at a set of documents you care about. Make 3 grounded question-and-answer examples that cite the source pieces.</p></div>
+      <div class="block bufnote"><div class="lab">Buffer this week</div><p>Wrap-up questions cover common retrieval problems (splitting text, out-of-date search) and a preview of how this helps your capstone.</p></div>
     </article>
 
     <article class="week" id="w7">
@@ -893,9 +893,9 @@
       </div>
       <div class="block"><div class="lab">Learning objectives</div>
         <ul class="clean">
-          <li><strong>Rebuild</strong> a previous hand-rolled agent in <strong>LangGraph</strong>, mapping your by-hand concepts onto the framework's abstractions.</li>
-          <li><strong>Compare</strong> LangGraph, CrewAI, and AutoGen and <strong>justify</strong> which fits a given problem.</li>
-          <li><strong>Implement</strong> a simple graph with nodes, edges, and state.</li>
+          <li><strong>Rebuild</strong> one of your hand-made agents in <strong>LangGraph</strong>, matching your own ideas to the framework's parts.</li>
+          <li><strong>Compare</strong> LangGraph, CrewAI, and AutoGen, and <strong>say</strong> which fits a given job.</li>
+          <li><strong>Build</strong> a simple graph with nodes, edges, and state.</li>
         </ul>
       </div>
       <div class="block"><div class="lab">Topics <span class="hint">— click to open its explainer</span></div>
@@ -907,9 +907,9 @@
           <a class="topic-chip" href="topics.html#framework-tradeoffs">Trade-offs &amp; lock-in</a>
         </div>
       </div>
-      <div class="block"><div class="lab">Hands-on lab</div><p>Port your Week 3–5 agent to LangGraph. Then re-express the <em>same</em> task minimally in CrewAI <em>or</em> AutoGen and write a short comparison: what each made easy vs. awkward.</p></div>
-      <div class="block homework"><div class="lab">Homework</div><p>Finish the port; extend the LangGraph version with one conditional edge (branching). Note two things the framework gave you for free that you'd hand-coded before.</p></div>
-      <div class="block bufnote"><div class="lab">Buffer this week</div><p>Recap slot maps "hand-rolled concept → framework term" as a class, so frameworks feel like relabeling, not new magic.</p></div>
+      <div class="block"><div class="lab">Hands-on lab</div><p>Move your Week 3–5 agent to LangGraph. Then write the <em>same</em> task in a short form in CrewAI <em>or</em> AutoGen, and write a short comparison: what each one made easy or hard.</p></div>
+      <div class="block homework"><div class="lab">Homework</div><p>Finish the move, and add one branching edge to the LangGraph version. Note two things the framework did for you that you had coded by hand before.</p></div>
+      <div class="block bufnote"><div class="lab">Buffer this week</div><p>The recap matches "hand-made idea → framework word" as a class, so frameworks feel like new names for things you know, not magic.</p></div>
     </article>
 
     <article class="week buffer" id="w8">
@@ -920,9 +920,9 @@
       </div>
       <div class="block"><div class="lab">Learning objectives</div>
         <ul class="clean">
-          <li><strong>Implement</strong> a planner that decomposes a complex goal into ordered subtasks the agent executes.</li>
-          <li><strong>Compare</strong> plan-then-execute vs. interleaved (ReAct-style) planning and choose appropriately.</li>
-          <li><strong>Deliver</strong> a capstone proposal with a clear problem, users, and success criteria.</li>
+          <li><strong>Build</strong> a planner that breaks a big goal into ordered steps the agent runs.</li>
+          <li><strong>Compare</strong> plan-first vs. step-by-step (ReAct) planning, and pick the right one.</li>
+          <li><strong>Hand in</strong> a capstone plan with a clear problem, users, and goals.</li>
         </ul>
       </div>
       <div class="block"><div class="lab">Topics <span class="hint">— click to open its explainer</span></div>
@@ -934,9 +934,9 @@
         </div>
         <p style="margin-top:12px;color:var(--muted);">Lighter new content — a planning + proposal week.</p>
       </div>
-      <div class="block"><div class="lab">Hands-on lab</div><p>Add a planning step to your LangGraph agent: it drafts a plan, executes step by step, and can replan on failure. Test it on a task with 4+ subtasks.</p></div>
-      <div class="deliverable"><div class="lab">Capstone proposal · graded checkpoint · due end of Week 8</div><p>Submit a 1-page proposal: problem, target users, planned tools, memory/retrieval approach, and measurable success criteria.</p></div>
-      <div class="block bufnote"><div class="lab">Buffer this week</div><p><strong>Checkpoint week:</strong> protected time for 1:1 proposal feedback and to catch up on the framework transition.</p></div>
+      <div class="block"><div class="lab">Hands-on lab</div><p>Add a planning step to your LangGraph agent: it writes a plan, runs it step by step, and can re-plan if a step fails. Test it on a task with 4 or more steps.</p></div>
+      <div class="deliverable"><div class="lab">Capstone proposal · graded checkpoint · due end of Week 8</div><p>Hand in a 1-page plan: the problem, who it is for, the tools you plan to use, your memory/retrieval idea, and clear goals you can measure.</p></div>
+      <div class="block bufnote"><div class="lab">Buffer this week</div><p><strong>Catch-up week:</strong> saved time for one-to-one feedback on your plan and to catch up on the move to frameworks.</p></div>
     </article>
 
     <!-- ============ MONTH 3 ============ -->
@@ -954,9 +954,9 @@
       </div>
       <div class="block"><div class="lab">Learning objectives</div>
         <ul class="clean">
-          <li><strong>Build</strong> a multi-agent system where specialized agents collaborate on a task.</li>
-          <li><strong>Implement</strong> a clean handoff protocol (how one agent passes control and context to another).</li>
-          <li><strong>Evaluate</strong> when multiple agents beat a single well-designed agent — and when they just add cost and failure modes.</li>
+          <li><strong>Build</strong> a multi-agent system where special agents work together on a task.</li>
+          <li><strong>Build</strong> a clean handoff (how one agent passes control and information to another).</li>
+          <li><strong>Judge</strong> when many agents beat one good agent — and when they just add cost and new ways to fail.</li>
         </ul>
       </div>
       <div class="block"><div class="lab">Topics <span class="hint">— click to open its explainer</span></div>
@@ -968,9 +968,9 @@
           <a class="topic-chip" href="topics.html#multi-agent-costs">Real costs of multi-agent</a>
         </div>
       </div>
-      <div class="block"><div class="lab">Hands-on lab</div><p>Build a 2–3 agent "content pipeline" (researcher → writer → editor) with explicit handoffs. Compare its output and cost against a single-agent baseline.</p></div>
-      <div class="block homework"><div class="lab">Homework</div><p>Add a critic agent that can send work back for revision. Show one run where the critic caught and fixed a real problem.</p></div>
-      <div class="block bufnote"><div class="lab">Buffer this week</div><p>Wrap Q&amp;A on multi-agent debugging — tracing <em>which</em> agent went wrong is a new skill; we practice reading multi-agent logs.</p></div>
+      <div class="block"><div class="lab">Hands-on lab</div><p>Build a 2–3 agent "content line" (researcher → writer → editor) with clear handoffs. Compare its output and cost with a single agent.</p></div>
+      <div class="block homework"><div class="lab">Homework</div><p>Add a critic agent that can send work back to be fixed. Show one run where the critic found and fixed a real problem.</p></div>
+      <div class="block bufnote"><div class="lab">Buffer this week</div><p>Wrap-up questions cover debugging many agents — finding <em>which</em> agent went wrong is a new skill, so we practice reading multi-agent logs.</p></div>
     </article>
 
     <article class="week" id="w10">
@@ -981,9 +981,9 @@
       </div>
       <div class="block"><div class="lab">Learning objectives</div>
         <ul class="clean">
-          <li><strong>Implement</strong> a supervisor/worker orchestration where a supervisor routes tasks to workers.</li>
-          <li><strong>Build</strong> a human-in-the-loop checkpoint that pauses the graph for approval before a consequential action.</li>
-          <li><strong>Design</strong> an orchestration graph diagram for your capstone.</li>
+          <li><strong>Build</strong> a supervisor/worker setup where a supervisor sends tasks to workers.</li>
+          <li><strong>Build</strong> a human-approval step that pauses the graph before an important action.</li>
+          <li><strong>Design</strong> a graph diagram for your capstone.</li>
         </ul>
       </div>
       <div class="block"><div class="lab">Topics <span class="hint">— click to open its explainer</span></div>
@@ -996,9 +996,9 @@
           <a class="topic-chip" href="topics.html#state-persistence">State persistence</a>
         </div>
       </div>
-      <div class="block"><div class="lab">Hands-on lab</div><p>Build a supervisor agent that dispatches to 2+ workers and add a <strong>human-in-the-loop interrupt</strong>: the graph pauses for your approval before a "sensitive" tool, then resumes.</p></div>
-      <div class="deliverable"><div class="lab">Capstone milestone · due Week 10</div><p>Submit your architecture sketch (agents/graph, tools, data flow, handoffs, human gates). Wire at least one human-approval checkpoint into a prototype.</p></div>
-      <div class="block bufnote"><div class="lab">Buffer this week</div><p>Break used to workshop architecture diagrams in pairs before they become the capstone milestone.</p></div>
+      <div class="block"><div class="lab">Hands-on lab</div><p>Build a supervisor agent that sends work to 2 or more workers, and add a <strong>human-approval pause</strong>: the graph stops for your "OK" before a risky tool, then continues.</p></div>
+      <div class="deliverable"><div class="lab">Capstone milestone · due Week 10</div><p>Hand in your design sketch (agents/graph, tools, data flow, handoffs, human-approval steps). Add at least one human-approval pause to a prototype.</p></div>
+      <div class="block bufnote"><div class="lab">Buffer this week</div><p>The break is used to work on design diagrams in pairs before they become the capstone milestone.</p></div>
     </article>
 
     <article class="week" id="w11">
@@ -1009,9 +1009,9 @@
       </div>
       <div class="block"><div class="lab">Learning objectives</div>
         <ul class="clean">
-          <li><strong>Apply</strong> context-engineering techniques (what to put in context, when, and how to compress it) to improve reliability and cost.</li>
-          <li><strong>Integrate</strong> an external system via the <strong>Model Context Protocol (MCP)</strong>.</li>
-          <li><strong>Evaluate</strong> the impact of context choices on a real task.</li>
+          <li><strong>Use</strong> context-engineering skills (what to put in the context, when, and how to shorten it) to improve reliability and cost.</li>
+          <li><strong>Connect</strong> an outside system with the <strong>Model Context Protocol (MCP)</strong>.</li>
+          <li><strong>Check</strong> how your context choices change a real task.</li>
         </ul>
       </div>
       <div class="block"><div class="lab">Topics <span class="hint">— click to open its explainer</span></div>
@@ -1022,9 +1022,9 @@
           <a class="topic-chip" href="topics.html#connectors">Reusable connectors</a>
         </div>
       </div>
-      <div class="block"><div class="lab">Hands-on lab</div><p>Connect your agent to an MCP server and use its tools/resources. Then run a context-engineering pass on one agent: measure tokens/cost before and after compression and summarization.</p></div>
-      <div class="block homework"><div class="lab">Homework</div><p>Integrate one more MCP capability <em>or</em> apply context engineering to your capstone, and report the before/after cost and quality difference.</p></div>
-      <div class="block bufnote"><div class="lab">Buffer this week</div><p>Recap slot connects context engineering back to Week 6 memory — two sides of "managing what the model sees."</p></div>
+      <div class="block"><div class="lab">Hands-on lab</div><p>Connect your agent to an MCP server and use its tools. Then do a context clean-up on one agent: measure tokens and cost before and after you shorten and summarize.</p></div>
+      <div class="block homework"><div class="lab">Homework</div><p>Connect one more MCP tool, <em>or</em> use context engineering on your capstone, and report the before-and-after cost and quality.</p></div>
+      <div class="block bufnote"><div class="lab">Buffer this week</div><p>The recap links context engineering back to Week 6 memory — two sides of "choosing what the model sees."</p></div>
     </article>
 
     <article class="week buffer" id="w12">
@@ -1035,9 +1035,9 @@
       </div>
       <div class="block"><div class="lab">Learning objectives</div>
         <ul class="clean">
-          <li><strong>Build</strong> an evaluation harness: a labeled test set plus metrics for an agent task.</li>
-          <li><strong>Instrument</strong> an agent with tracing and <strong>debug</strong> a failure by reading its trace.</li>
-          <li><strong>Evaluate</strong> your own capstone against its stated success criteria so far.</li>
+          <li><strong>Build</strong> a test setup: a labeled test set plus scores for an agent task.</li>
+          <li><strong>Add</strong> tracing to an agent and <strong>fix</strong> a failure by reading its trace.</li>
+          <li><strong>Check</strong> your own capstone against the goals you set so far.</li>
         </ul>
       </div>
       <div class="block"><div class="lab">Topics <span class="hint">— click to open its explainer</span></div>
@@ -1050,9 +1050,9 @@
         </div>
         <p style="margin-top:12px;color:var(--muted);">Lighter new content — consolidation + review.</p>
       </div>
-      <div class="block"><div class="lab">Hands-on lab</div><p>Add tracing to an agent and build a small eval suite (5–10 labeled cases) that scores it automatically. Use a trace to diagnose one real failure and fix it.</p></div>
-      <div class="deliverable"><div class="lab">Mid-capstone review · graded checkpoint · due Week 12</div><p>Present a 5-minute status: working core loop, one real tool, and first eval cases. Give and receive peer feedback.</p></div>
-      <div class="block bufnote"><div class="lab">Buffer this week</div><p><strong>Checkpoint week:</strong> most of class is structured mid-capstone reviews and unblocking. Evaluation is taught now because you apply it to your own project immediately.</p></div>
+      <div class="block"><div class="lab">Hands-on lab</div><p>Add tracing to an agent and build a small test set (5–10 labeled cases) that scores it for you. Use a trace to find one real failure and fix it.</p></div>
+      <div class="deliverable"><div class="lab">Mid-capstone review · graded checkpoint · due Week 12</div><p>Give a 5-minute update: a working core loop, one real tool, and your first test cases. Give and get feedback from classmates.</p></div>
+      <div class="block bufnote"><div class="lab">Buffer this week</div><p><strong>Catch-up week:</strong> most of class is capstone reviews and getting unstuck. We teach testing now so you can use it on your own project right away.</p></div>
     </article>
 
     <!-- ============ MONTH 4 ============ -->
@@ -1070,9 +1070,9 @@
       </div>
       <div class="block"><div class="lab">Learning objectives</div>
         <ul class="clean">
-          <li><strong>Implement</strong> retries with backoff, response caching, and model/tool fallbacks in an agent.</li>
-          <li><strong>Measure and budget</strong> cost and latency for an agent run, and <strong>optimize</strong> one bottleneck.</li>
-          <li><strong>Evaluate</strong> reliability improvements with before/after numbers.</li>
+          <li><strong>Build</strong> retries with backoff, caching of results, and model/tool backups in an agent.</li>
+          <li><strong>Measure and budget</strong> cost and speed for an agent run, and <strong>speed up</strong> one slow part.</li>
+          <li><strong>Check</strong> your reliability gains with before-and-after numbers.</li>
         </ul>
       </div>
       <div class="block"><div class="lab">Topics <span class="hint">— click to open its explainer</span></div>
@@ -1084,9 +1084,9 @@
           <a class="topic-chip" href="topics.html#reliability-triangle">Reliability / cost / quality</a>
         </div>
       </div>
-      <div class="block"><div class="lab">Hands-on lab</div><p>Harden an agent: add retries with backoff, cache an expensive tool or model call, and add a fallback model. Produce a table of cost and p50/p95 latency before and after.</p></div>
-      <div class="block homework"><div class="lab">Homework</div><p>Apply reliability features to your capstone (part of the Week 14 milestone) and record the cost/latency impact.</p></div>
-      <div class="block bufnote"><div class="lab">Buffer this week</div><p>Wrap Q&amp;A on cost surprises — everyone shares their biggest bill and how they'd cut it.</p></div>
+      <div class="block"><div class="lab">Hands-on lab</div><p>Make an agent tougher: add retries with backoff, cache a costly tool or model call, and add a backup model. Make a table of cost and speed (p50/p95) before and after.</p></div>
+      <div class="block homework"><div class="lab">Homework</div><p>Add reliability features to your capstone (part of the Week 14 milestone) and record the effect on cost and speed.</p></div>
+      <div class="block bufnote"><div class="lab">Buffer this week</div><p>Wrap-up questions cover cost surprises — everyone shares their biggest bill and how they would cut it.</p></div>
     </article>
 
     <article class="week" id="w14">
@@ -1097,9 +1097,9 @@
       </div>
       <div class="block"><div class="lab">Learning objectives</div>
         <ul class="clean">
-          <li><strong>Demonstrate</strong> a prompt-injection attack against a tool-using agent and <strong>implement</strong> a mitigation.</li>
-          <li><strong>Build</strong> input/output guardrails and a <strong>least-privilege</strong> permission model for agent tools.</li>
-          <li><strong>Assess</strong> an agent for common security risks and document the residual risk.</li>
+          <li><strong>Show</strong> a prompt-injection attack on a tool-using agent, and <strong>add</strong> a defense.</li>
+          <li><strong>Build</strong> input and output guardrails and a <strong>least-privilege</strong> permission setup for tools.</li>
+          <li><strong>Check</strong> an agent for common security risks and write down the risk that is left.</li>
         </ul>
       </div>
       <div class="block"><div class="lab">Topics <span class="hint">— click to open its explainer</span></div>
@@ -1112,9 +1112,9 @@
           <a class="topic-chip" href="topics.html#owasp-llm">OWASP LLM risks</a>
         </div>
       </div>
-      <div class="block"><div class="lab">Hands-on lab</div><p>Attack your own agent: craft an indirect prompt injection hidden in a document/tool result that makes it misbehave. Then defend it — add a guardrail and tighten permissions so the attack fails. Show both the successful attack and the successful defense.</p></div>
-      <div class="deliverable"><div class="lab">Capstone milestone · reliability + safety · due Week 14</div><p>Complete the safety pass on your capstone: at least one guardrail and a documented least-privilege permission story, alongside the Week 13 reliability features.</p></div>
-      <div class="block bufnote"><div class="lab">Buffer this week</div><p>Break used for a live "red team the instructor's agent" exercise — attacks are stickier as a group sport.</p></div>
+      <div class="block"><div class="lab">Hands-on lab</div><p>Attack your own agent: hide a prompt injection inside a document or tool result that makes it misbehave. Then defend it — add a guardrail and tighten permissions so the attack fails. Show both the attack working and the defense working.</p></div>
+      <div class="deliverable"><div class="lab">Capstone milestone · reliability + safety · due Week 14</div><p>Finish the safety pass on your capstone: at least one guardrail and a written least-privilege permission plan, along with the Week 13 reliability features.</p></div>
+      <div class="block bufnote"><div class="lab">Buffer this week</div><p>The break is used for a live group exercise: everyone tries to attack the teacher's agent — attacks are more fun and memorable as a team.</p></div>
     </article>
 
     <article class="week" id="w15">
@@ -1125,9 +1125,9 @@
       </div>
       <div class="block"><div class="lab">Learning objectives</div>
         <ul class="clean">
-          <li><strong>Deploy</strong> an agent as a service (FastAPI endpoint, containerized) reachable over HTTP.</li>
-          <li><strong>Implement</strong> production monitoring: logging, tracing, and basic metrics/alerts.</li>
-          <li><strong>Explain</strong> the core LLMOps loop (observe → evaluate → improve) for a live agent.</li>
+          <li><strong>Put</strong> an agent online as a service (a FastAPI endpoint in a container) that others can reach over the web.</li>
+          <li><strong>Add</strong> production monitoring: logging, tracing, and basic numbers and alerts.</li>
+          <li><strong>Explain</strong> the LLMOps loop (watch → measure → improve) for a live agent.</li>
         </ul>
       </div>
       <div class="block"><div class="lab">Topics <span class="hint">— click to open its explainer</span></div>
@@ -1140,9 +1140,9 @@
           <a class="topic-chip" href="topics.html#llmops-loop">The LLMOps loop</a>
         </div>
       </div>
-      <div class="block"><div class="lab">Hands-on lab</div><p>Wrap your agent in a FastAPI endpoint, containerize it, and deploy it somewhere reachable. Add request logging + tracing and a minimal metrics view.</p></div>
-      <div class="deliverable"><div class="lab">Capstone milestone · deploy + monitor · due Week 15</div><p>Deploy your capstone with tracing and basic monitoring. It must be reachable and instrumented for demo day.</p></div>
-      <div class="block bufnote"><div class="lab">Buffer this week</div><p>Wrap Q&amp;A is a deployment troubleshooting clinic — because something always breaks in prod. We confirm every capstone is reachable before demo day.</p></div>
+      <div class="block"><div class="lab">Hands-on lab</div><p>Wrap your agent in a FastAPI endpoint, put it in a container, and deploy it somewhere people can reach. Add request logging and tracing and a simple numbers view.</p></div>
+      <div class="deliverable"><div class="lab">Capstone milestone · deploy + monitor · due Week 15</div><p>Put your capstone online with tracing and basic monitoring. It must be reachable and set up for demo day.</p></div>
+      <div class="block bufnote"><div class="lab">Buffer this week</div><p>Wrap-up is a deployment help session — because something always breaks in production. We make sure every capstone is reachable before demo day.</p></div>
     </article>
 
     <article class="week buffer" id="w16">
@@ -1153,9 +1153,9 @@
       </div>
       <div class="block"><div class="lab">Learning objectives</div>
         <ul class="clean">
-          <li><strong>Present</strong> and <strong>defend</strong> your capstone: architecture, evaluation results, reliability/safety choices, and cost.</li>
-          <li><strong>Evaluate</strong> peers' agents with structured, constructive feedback.</li>
-          <li><strong>Plan</strong> your continued learning path in a fast-moving field.</li>
+          <li><strong>Show</strong> and <strong>explain</strong> your capstone: its design, test results, reliability and safety choices, and cost.</li>
+          <li><strong>Review</strong> classmates' agents with clear, kind feedback.</li>
+          <li><strong>Plan</strong> how you will keep learning in a fast-changing field.</li>
         </ul>
       </div>
       <div class="block"><div class="lab">Topics <span class="hint">— click to open its explainer</span></div>
@@ -1165,9 +1165,9 @@
         </div>
         <p style="margin-top:12px;color:var(--muted);">Plus: reflecting on trade-offs, where the field is heading (patterns over tools), and building a portfolio.</p>
       </div>
-      <div class="block"><div class="lab">Hands-on — demo day</div><p>Each learner/team gives a 6–8 minute live demo + defense. The rest of the class runs structured peer review against a shared rubric (works · evaluated · reliable · safe · deployed).</p></div>
-      <div class="deliverable"><div class="lab">Final deliverable · end of Week 16</div><p>Capstone submission: repo + design doc + live endpoint/UI + eval results + demo.</p></div>
-      <div class="block bufnote"><div class="lab">Buffer this week</div><p><strong>Wrap week:</strong> light on new content. Time protected for demos, peer feedback, a course retrospective, and a "what to learn next" roadmap so momentum outlasts the course.</p></div>
+      <div class="block"><div class="lab">Hands-on — demo day</div><p>Each person or team gives a 6–8 minute live demo and answers questions. The rest of the class reviews it against a shared checklist (works · tested · reliable · safe · online).</p></div>
+      <div class="deliverable"><div class="lab">Final deliverable · end of Week 16</div><p>Capstone hand-in: repo + design doc + live link or UI + test results + demo.</p></div>
+      <div class="block bufnote"><div class="lab">Buffer this week</div><p><strong>Wrap-up week:</strong> little new material. Time is saved for demos, feedback, a look back at the course, and a "what to learn next" plan so you keep going after the course.</p></div>
     </article>
 
     <!-- MAP -->
